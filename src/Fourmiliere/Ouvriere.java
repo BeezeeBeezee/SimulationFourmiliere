@@ -15,6 +15,7 @@ public class Ouvriere extends Role{
 		
 		if (quantite>0 && f.getResteAManger()>0)
 			
+			
 			if(quantite<=f.getResteAManger()) {
 				
 				f.manger(quantite);
