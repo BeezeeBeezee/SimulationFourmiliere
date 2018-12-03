@@ -1,4 +1,4 @@
-package Fourmiliere;
+package fourmiliere;
 
 public class Ouvriere extends Role{
 	

@@ -1,4 +1,4 @@
-package CoeurSimulateur;
+package coeurSimulateur;
 
 public class main {
 

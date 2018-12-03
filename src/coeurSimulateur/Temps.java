@@ -1,4 +1,4 @@
-package CoeurSimulateur;
+package coeurSimulateur;
 
 import java.util.Scanner;
 
