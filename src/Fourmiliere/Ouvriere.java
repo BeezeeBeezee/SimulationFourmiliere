@@ -20,6 +20,7 @@ public class Ouvriere extends Role{
 				quantite=0;
 				return true;
 				
+				
 			} else {
 				
 				f.manger(f.getResteAManger());
