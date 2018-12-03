@@ -12,6 +12,7 @@ public class Ouvriere extends Role{
 		if(!(f.getVivant()))
 			return false;
 		
+		
 		if (quantite>0 && f.getResteAManger()>0)
 			
 			if(quantite<=f.getResteAManger()) {
