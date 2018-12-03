@@ -1,4 +1,4 @@
-package Fourmiliere;
+package fourmiliere;
 
 import java.util.ArrayList;
 

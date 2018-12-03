@@ -1,8 +1,8 @@
-package Fourmiliere;
+package fourmiliere;
 
-public class Adulte extends Etape{
+public class Larve extends Etape{
 
-	public Adulte(double poids, double resteAManger) {
+	public Larve(double poids, double resteAManger) {
 		super.poids = poids;
 		super.resteAManger = resteAManger;
 	}

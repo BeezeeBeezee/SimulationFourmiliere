@@ -1,4 +1,4 @@
-package Fourmiliere;
+package fourmiliere;
 
 public abstract class Etape {
 	
