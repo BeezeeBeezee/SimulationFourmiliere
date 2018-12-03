@@ -18,7 +18,8 @@ public class Oeuf extends Etape{
 	}
 
 	@Override
-	void mange(double aEteMange) {		
+	boolean mange(double aEteMange) {
+		return false;
 	}
 
 }

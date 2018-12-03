@@ -18,8 +18,8 @@ public class Larve extends Etape{
 	}
 
 	@Override
-	void mange(double aEteMange) {
-		super.resteAManger -= aEteMange;
-		
+	boolean mange(double aEteMange) {
+		super.resteAManger -= aEteMange;		
+		return super.resteAManger > 0;	
 	}
 }

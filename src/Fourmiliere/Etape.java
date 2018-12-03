@@ -7,7 +7,7 @@ public abstract class Etape {
 	protected double resteAManger;
 	
 	abstract double getPoids();
-	abstract void mange(double aEteMange);
+	abstract boolean mange(double aEteMange);
 	
 	abstract double getResteAManger();
 	
