@@ -22,6 +22,7 @@ public class Fourmi {
 		this.setSexeRandom();
 	}
 	
+	
 	public int getId() {
 		return id;
 	}
