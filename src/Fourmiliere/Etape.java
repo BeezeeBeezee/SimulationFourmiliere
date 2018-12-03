@@ -11,5 +11,4 @@ public abstract class Etape {
 	
 	abstract double getResteAManger();
 	
-	
 }
