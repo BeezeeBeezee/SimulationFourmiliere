@@ -4,11 +4,12 @@ public abstract class Etape {
 	
 	
 	protected double poids;
-	protected int quantiteNourritureObligatoire;
+	protected double resteAManger;
 	
 	abstract double getPoids();
-
-	abstract int getQuantiteNourritureObligatoire();
+	abstract void mange(double aEteMange);
+	
+	abstract double getResteAManger();
 	
 	
 }

@@ -2,9 +2,9 @@ package Fourmiliere;
 
 public class Adulte extends Etape{
 
-	public Adulte(double poids, int quantiteNourritureObligatoire) {
+	public Adulte(double poids, double resteAManger) {
 		super.poids = poids;
-		super.quantiteNourritureObligatoire = quantiteNourritureObligatoire;
+		super.resteAManger = resteAManger;
 	}
 	
 	@Override
@@ -13,10 +13,13 @@ public class Adulte extends Etape{
 	}
 
 	@Override
-	int getQuantiteNourritureObligatoire() {
-		return super.quantiteNourritureObligatoire;
+	double getResteAManger() {
+		return super.resteAManger;
 	}
 
-	
-
+	@Override
+	void mange(double aEteMange) {
+		super.resteAManger -= aEteMange;
+		
+	}
 }
