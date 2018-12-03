@@ -8,7 +8,9 @@ public class Panneau extends JPanel {
 	
 	public void paintComponent(Graphics g){
 		
-		g.fillOval(20, 20, 75, 75);
+		g.fillOval(100, 100, 10, 10);
+		
+		g.drawRoundRect(200, 150, 100, 100, 10, 10);
 	}               
 }
 
