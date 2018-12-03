@@ -10,14 +10,14 @@ public class Fourmi {
 	private boolean sexe;
 	private Boolean vivant;
 	private Etape etape;
-	private double quantiteNourritureMange;
 	
-	
+	/*
+	 * Creation d'une fourmi
+	 */
 	public Fourmi(){
 		id = incrementId;
 		id++;                                                                                                                                                                                                                      
 		age = 0;
-		quantiteNourritureMange = 0;
 		vivant = true;
 		this.setSexeRandom();
 	}
@@ -30,6 +30,9 @@ public class Fourmi {
 		return age;
 	}
 
+	/*
+	 * Vieillissement d'une fourmi d'un jour
+	 */
 	public void incrementAge() {
 		this.age++;
 	}
@@ -54,17 +57,20 @@ public class Fourmi {
 		this.etape = etape;
 	}
 
-	public double getQuantiteNourritureMange() {
-		return quantiteNourritureMange;
-	}
-
-	public void setQuantiteNourritureMange(double quantiteNourritureMange) {
-		this.quantiteNourritureMange = quantiteNourritureMange;
-	}
-
 	private void setSexeRandom() {
 		Random random = new Random();
 		this.sexe = random.nextBoolean();
+	}
+	
+	public double getResteAManger() {
+		return etape.getResteAManger();
+	}
+	
+	/*
+	 * 
+	 */
+	public boolean mange(double aEteMange) {
+		return etape.mange(aEteMange); 
 	}
 
 	//TODO
