@@ -18,14 +18,14 @@ public class Ouvriere extends Role{
 			
 			if(quantite<=f.getResteAManger()) {
 				
-				f.manger(quantite);
+				f.mange(quantite);
 				quantite=0;
 				return true;
 				
 				
 			} else {
 				
-				f.manger(f.getResteAManger());
+				f.mange(f.getResteAManger());
 				quantite=quantite-f.getResteAManger();
 				return true;
 				
