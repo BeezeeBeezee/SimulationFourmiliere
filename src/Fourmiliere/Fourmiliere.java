@@ -1,8 +1,10 @@
 package Fourmiliere;
 
+import java.util.ArrayList;
+
 public class Fourmiliere {
 	
-	int laVariable;
-	int bleble;
+	String nomFourmiliere;
+	ArrayList<Fourmi> ListeFourmis = new ArrayList<Fourmi>();
 
 }
