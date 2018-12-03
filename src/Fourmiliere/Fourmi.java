@@ -1,32 +1,79 @@
 package Fourmiliere;
 
+import java.util.Random;
+
 public class Fourmi {
-	private int id = 0;
-	int idFourmi;
-	int age; //Jour
-	double poids; 
-	double quantiteNourritureMange;
+	private int incrementId = 0;
 	
-	Sexe sexe;
-	Etat etat; //Vivant ou Mort
-	Etape etape;	
+	public int id;
+	private int age;
+	private boolean sexe;
+	private Boolean vivant;
+	private Etape etape;
+	private double quantiteNourritureMange;
+	
 	
 	public Fourmi(){
-		idFourmi = id;
+		id = incrementId;
 		id++;                                                                                                                                                                                                                      
 		age = 0;
-		poids = 0.1; //mg
-		quantiteNourritureMange = Math.random() * (0 - 1);
-		sexe = sexe.FEMELLE;
+		quantiteNourritureMange = 0;
+		vivant = true;
+		this.setSexeRandom();
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void incrementAge() {
+		this.age++;
+	}
+
+	public boolean getSexe() {
+		return sexe;
+	}
+
+	public boolean getVivant() {
+		return vivant;
+	}
+	
+	private void setVivant(Boolean vivant) {
+		this.vivant = vivant;
+	}
+
+	public Etape getEtape() {
+		return etape;
+	}
+
+	public void setEtape(Etape etape) {
+		this.etape = etape;
+	}
+
+	public double getQuantiteNourritureMange() {
+		return quantiteNourritureMange;
+	}
+
+	public void setQuantiteNourritureMange(double quantiteNourritureMange) {
+		this.quantiteNourritureMange = quantiteNourritureMange;
+	}
+
+	private void setSexeRandom() {
+		Random random = new Random();
+		this.sexe = random.nextBoolean();
+	}
+
+	//TODO
 	public void evolution() {
 		
 	}
 	
+	//TODO
 	public void isGonnaDie() {
 		
 	}
-	
-	
 }
