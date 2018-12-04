@@ -6,22 +6,21 @@ public class Larve extends Etape{
 		super();
 		this.poids = Math.random() * 8 + 4.5;
 		this.resteAManger = this.poids;
-		// TO DO
 	}
 	
 	@Override
 	double getPoids() {
-		return super.poids;
+		return this.poids;
 	}
 
 	@Override
 	double getResteAManger() {
-		return super.resteAManger;
+		return this.resteAManger;
 	}
 
 	@Override
 	boolean mange(double aEteMange) {
-		super.resteAManger -= aEteMange;		
-		return super.resteAManger > 0;	
+		this.resteAManger -= aEteMange;		
+		return this.resteAManger > 0;	
 	}
 }

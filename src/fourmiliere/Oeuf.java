@@ -10,12 +10,12 @@ public class Oeuf extends Etape{
 	
 	@Override
 	double getPoids() {
-		return super.poids;
+		return this.poids;
 	}
 
 	@Override
 	double getResteAManger() {
-		return super.resteAManger;
+		return this.resteAManger;
 	}
 
 	@Override

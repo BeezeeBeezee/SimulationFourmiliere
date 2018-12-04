@@ -7,11 +7,20 @@ public class Adulte extends Etape{
 	private Role role;
 	
 	public Adulte(double poids, double resteAManger) {
-		super.poids = poids;
-		super.resteAManger = resteAManger;
+		this.poids = poids;
+		this.resteAManger = resteAManger;
 		
 		double random = Math.random() * 99 + 1;
 		if (random >= 1 && random <= 60) {
+			
+		}
+		if (random > 60 && random <= 80) {
+			
+		}
+		if (random > 80 && random <= 85) {
+			
+		}
+		else {
 			
 		}
 		
@@ -19,17 +28,17 @@ public class Adulte extends Etape{
 	
 	@Override
 	double getPoids() {
-		return super.poids;
+		return this.poids;
     }
 
 	@Override
 	double getResteAManger() {
-		return super.resteAManger;
+		return this.resteAManger;
 	}
 
 	@Override
 	boolean mange(double aEteMange) {
-		super.resteAManger -= aEteMange;		
-		return super.resteAManger > 0;	
+		this.resteAManger -= aEteMange;		
+		return this.resteAManger > 0;	
 	}
 }
