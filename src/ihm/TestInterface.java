@@ -1,9 +1,11 @@
 package ihm;
 
+import fourmiliere.Adulte;
 import fourmiliere.Etape;
 import fourmiliere.Fourmi;
 import fourmiliere.Nymphe;
 import fourmiliere.Oeuf;
+import fourmiliere.Ouvriere;
 
 public class TestInterface {
 
@@ -11,9 +13,6 @@ public class TestInterface {
 		//Simulation uneSimulation = new Simulation();
 		//uneSimulation.creerFourmiliere();
 		
-		
-
-
 	}
 
 }

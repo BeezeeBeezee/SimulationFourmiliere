@@ -10,23 +10,23 @@ public class Larve extends Etape{
 	}
 	
 	@Override
-	double getPoids() {
+	public double getPoids() {
 		return this.poids;
 	}
 
 	@Override
-	double getResteAManger() {
+	public double getResteAManger() {
 		return this.resteAManger;
 	}
 
 	@Override
-	boolean mange(double aEteMange) {
+	public boolean mange(double aEteMange) {
 		this.resteAManger -= aEteMange;		
 		return this.resteAManger > 0;	
 	}
 
 	@Override
-	void vaManger() {
+	public void vaManger() {
 		this.resteAManger = this.poids;
 	}
 	

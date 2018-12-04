@@ -11,22 +11,22 @@ public class Oeuf extends Etape{
 	}
 	
 	@Override
-	double getPoids() {
+	public double getPoids() {
 		return this.poids;
 	}
 
 	@Override
-	double getResteAManger() {
+	public double getResteAManger() {
 		return this.resteAManger;
 	}
 
 	@Override
-	boolean mange(double aEteMange) {
+	public boolean mange(double aEteMange) {
 		return false;
 	}
 
 	@Override
-	void vaManger() {
+	public void vaManger() {
 		this.resteAManger = 0;
 	}
 
