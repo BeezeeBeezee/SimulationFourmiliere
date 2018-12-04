@@ -3,7 +3,6 @@
 import java.util.Random;
 
 public class Fourmi {
-	private int incrementId = 0;
 	
 	public int id;
 	private int age;
@@ -11,30 +10,27 @@ public class Fourmi {
 	private Boolean vivant;
 	private Etape etape;
 	
-	/*
+	/**
 	 * Creation d'une fourmi
 	 */
-	public Fourmi(){
-		id = incrementId;
-		id++;                                                                                                                                                                                                                      
+	public Fourmi(int id){
+		this.id = id;                                                                                                                                                                                                           
 		age = 0;
 		vivant = true;
 		etape = new Oeuf();
 		this.setSexeRandom();
 	}
 	
-	public Fourmi(int larve){
-		id = incrementId;
-		id++;                                                                                                                                                                                                                      
+	public Fourmi(int id, int Larve){
+		this.id = id;                                                                                                                                                                                                                 
 		age = 0;
 		vivant = true;
 		etape = new Larve();
 		this.setSexeRandom();
 	}
 	
-	public Fourmi(String Adulte){
-		id = incrementId;
-		id++;                                                                                                                                                                                                                      
+	public Fourmi(int id, String Adulte){
+		this.id = id;                                                                                                                                                                                                     
 		age = 0;
 		vivant = true;
 		etape = new Adulte();
@@ -49,16 +45,18 @@ public class Fourmi {
 		return age;
 	}
 
-	/*
-	 * Vieillissement d'une fourmi d'un jour
+	/**
+	 * Vieillissement d'une fourmi d'un jour.
 	 */
 	public boolean incrementAge() {
 		this.age++;
 		return this.evolution();
 	}
 	
-	/*
-	 * Vieillissement d'une fourmi de nbAgeAjouter
+	/**
+	 * Vieillissement d'une fourmi de nbAgeAjouter.
+	 * @param nbAgeAjouter nombre de jour à ajouter à l'age de la fourmi
+	 * @return true si il y a eu evolution, false sinon
 	 */
 	public boolean ajoutAge(int nbAgeAjouter) {
 		this.age = this.age + nbAgeAjouter;
@@ -74,7 +72,7 @@ public class Fourmi {
 	}
 
 	public Etape getEtape() {
-		return etape;
+		return etape; 
 	}
 
 	public void setEtape(Etape etape) {
@@ -94,10 +92,6 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
-	/**
-	 * Methode permettant de faire evoluer si besoin la fourmi.
-	 * @return true si l'evolution a eu lieu, false sinon
-	 */
 	private boolean evolution() {
 		boolean resultat = false;
 		
@@ -117,15 +111,19 @@ public class Fourmi {
 	
 	/**
 	 * Methode qui verifie si la fourmi doit mourir ou non selon 
-	 * l'etape et le taux de nourriture de la fourmi
+	 * l'etape et le taux de nourriture de la fourmi.
 	 */
-	public void isGonnaDie() {
+	public boolean isGonnaDie() {
+		boolean res = false;
 		if(! (this.getEtape().getClass().getName()=="fourmiliere.Oeuf" 
 				&& this.getEtape().getClass().getName()=="fourmiliere.Nymphe") ) {
 			if(this.getEtape().getResteAManger() > 0) {
 				this.vivant = false;
+				res = true;
 			}
 		}
+		
+		return res;
 	}
 
 	@Override
@@ -133,6 +131,4 @@ public class Fourmi {
 		return "Fourmi n°" + id + ": [age=" + age + ", sexe=" + sexe + ", vivant="
 				+ vivant + ", etape=" + etape + "]";
 	}
-	
-	
 }

@@ -20,8 +20,8 @@ public class Fourmiliere {
 		age=0;
 		listeFourmis = new ArrayList<Fourmi>();
 		laReine= new Fourmi("une reine");
-		Adulte adulteReine=(Adulte)laReine.getEtape();
-		Reine roleReine= new Reine();
+		adulteReine=(Adulte)laReine.getEtape();
+		roleReine= new Reine();
 		adulteReine.setRole(roleReine);
 		
 		

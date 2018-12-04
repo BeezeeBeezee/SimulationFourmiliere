@@ -3,7 +3,6 @@ package fourmiliere;
 public class Reine extends Role{
 	
 	public Reine(){
-		
 		super();
 	}
 	
@@ -12,9 +11,7 @@ public class Reine extends Role{
 		
 		Fourmi laFourmi= new Fourmi();
 		f.listeFourmis.add(laFourmi);
-		
 		return laFourmi;
-		
 	}
 
 }
