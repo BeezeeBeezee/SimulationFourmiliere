@@ -46,4 +46,12 @@ public class Nymphe extends Etape{
 	public String toString() {
 		return "Nymphe[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
 	}
+
+	@Override
+	Etape etatSuivant(int age) {
+		if( age > 30) {
+			return new Adulte();
+		}
+		return this;
+	}
 }

@@ -23,8 +23,6 @@ class TestOuvriere {
 
 	@Test
 	void test() {
-		
-		
 		Fourmiliere laFourmilliere= new Fourmiliere();
 		laFourmilliere.setQuantiteNourriture(100);
 		Fourmi ouvriere = new Fourmi();
@@ -44,7 +42,5 @@ class TestOuvriere {
 		System.out.println(leTest.getResteAManger());
 		System.out.println(laFourmilliere.getQuantiteNourrirture());
 		assertTrue(true);
-		
 	}
-
 }

@@ -35,9 +35,9 @@ public class Fourmi {
 	/**
 	 * Vieillissement d'une fourmi d'un jour.
 	 */
-	public boolean incrementAge() {
+	public void incrementAge() {
 		this.age++;
-		return this.evolution();
+		this.evolution();
 	}
 	
 	
@@ -46,9 +46,9 @@ public class Fourmi {
 	 * @param nbAgeAjouter nombre de jour à ajouter à l'age de la fourmi
 	 * @return true si il y a eu evolution, false sinon
 	 */
-	public boolean ajoutAge(int nbAgeAjouter) {
+	public void ajoutAge(int nbAgeAjouter) {
 		this.age = this.age + nbAgeAjouter;
-		return this.evolution();
+		this.evolution();
 	}
 
 	public boolean getSexe() {
@@ -80,21 +80,8 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
-	private boolean evolution() {
-		boolean resultat = false;
-		
-		if(this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.age>3) {
-			this.etape = new Larve();
-			resultat = true;
-		}else if(this.getEtape().getClass().getName()=="fourmiliere.Larve"  && this.age>13) {
-			this.etape = new Nymphe();
-			resultat = true;
-		}else if(this.getEtape().getClass().getName()=="fourmiliere.Nymphe"  && this.age>30) {
-			this.etape = new Adulte();
-			resultat = true;
-		}
-		
-		return resultat;
+	private void evolution() {
+		this.etape = etape.etatSuivant(this.age);
 	}
 	
 	/**

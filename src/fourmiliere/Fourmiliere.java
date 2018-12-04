@@ -57,6 +57,7 @@ public class Fourmiliere {
 		this.quantiteNourriture=nouvelleQuantite;	
 	}
 	
+<<<<<<< HEAD
 	
 	public boolean nourrir(Fourmi f, Fourmiliere laFourmiliere) {
 		boolean resultat = false;
@@ -93,4 +94,6 @@ public class Fourmiliere {
 	
 	
 	
+=======
+>>>>>>> branch 'master' of https://github.com/BeezeeBeezee/SimulationFourmiliere.git
 }
