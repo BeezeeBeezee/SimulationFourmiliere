@@ -97,13 +97,13 @@ public class Fourmi {
 	private boolean evolution() {
 		boolean resultat = false;
 		
-		if(this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.age>3) {
+		if(this.age>3) {
 			this.etape = new Larve();
 			resultat = true;
-		}else if(this.getEtape().getClass().getName()=="fourmiliere.Larve" && this.age>13) {
+		}else if(this.age>13) {
 			this.etape = new Nymphe();
 			resultat = true;
-		}else if(this.getEtape().getClass().getName()=="fourmiliere.Nymphe" && this.age>30) {
+		}else if(this.age>30) {
 			this.etape = new Adulte();
 			resultat = true;
 		}
