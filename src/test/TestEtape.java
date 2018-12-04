@@ -16,7 +16,7 @@ class TestEtape {
 
 	@Test
 	void test() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(0);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		assert(f.getVivant()==true);
