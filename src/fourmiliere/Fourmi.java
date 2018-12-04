@@ -64,10 +64,6 @@ public class Fourmi {
 	public boolean getVivant() {
 		return vivant;
 	}
-	
-	private void setVivant(Boolean vivant) {
-		this.vivant = vivant;
-	}
 
 	public Etape getEtape() {
 		return etape;
@@ -90,15 +86,29 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
-	//TODO
 	public void evolution() {
 		if(this.getClass().getName()=="Oeuf" && this.age>3) {
 			this.etape = new Larve();
 		}
+		if(this.getClass().getName()=="Larve" && this.age>13) {
+			this.etape = new Nymphe();
+		}
+		if(this.getClass().getName()=="Nymphe" && this.age>30) {
+			this.etape = new Adulte();
+		}
 	}
 	
-	//TODO
 	public void isGonnaDie() {
-		
+		if(this.getEtape().getResteAManger() > 0) {
+			this.vivant = false;
+		}
 	}
+
+	@Override
+	public String toString() {
+		return "Fourmi n°" + id + ": [age=" + age + ", sexe=" + sexe + ", vivant="
+				+ vivant + ", etape=" + etape + "]";
+	}
+	
+	
 }
