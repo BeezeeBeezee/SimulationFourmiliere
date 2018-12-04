@@ -7,7 +7,7 @@ public class Fourmiliere {
 	
 	private double quantiteNourriture;
 	String nomFourmiliere;
-	ArrayList<Fourmi> listeFourmis = new ArrayList<Fourmi>();
+	public ArrayList<Fourmi> listeFourmis = new ArrayList<Fourmi>();
 
 	
 	
