@@ -27,7 +27,7 @@ class TestOuvriere {
 		
 		Fourmiliere laFourmilliere= new Fourmiliere();
 		laFourmilliere.setQuantiteNourriture(100);
-		Fourmi ouvriere = new Fourmi("coucou");
+		Fourmi ouvriere = new Fourmi(0);
 		Ouvriere ouv= new Ouvriere();
 		Adulte ad=(Adulte)ouvriere.getEtape();
 		ad.setRole(ouv);

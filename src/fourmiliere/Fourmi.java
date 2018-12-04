@@ -21,26 +21,12 @@ public class Fourmi {
 		this.setSexeRandom();
 	}
 	
-	//TODO A supprimer
-	public Fourmi(int id, int Larve){
-		this.id = id;                                                                                                                                                                                                                 
-		age = 0;
-		vivant = true;
-		etape = new Larve();
-		this.setSexeRandom();
-	}
-	
-	//TODO A supprimer
-	public Fourmi(String Adulte){
-		this.id = id;                                                                                                                                                                                                     
-		age = 0;
-		vivant = true;
-		etape = new Adulte();
-		this.setSexeRandom();
-	}
-	
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id=id;
 	}
 
 	public int getAge() {
@@ -53,10 +39,6 @@ public class Fourmi {
 	public boolean incrementAge() {
 		this.age++;
 		return this.evolution();
-	}
-
-	public void setId(int id) {
-		this.id=id;
 	}
 	
 	
