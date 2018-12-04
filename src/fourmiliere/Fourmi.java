@@ -19,6 +19,7 @@ public class Fourmi {
 		id++;                                                                                                                                                                                                                      
 		age = 0;
 		vivant = true;
+		etape = new Oeuf();
 		this.setSexeRandom();
 	}
 	
@@ -35,6 +36,7 @@ public class Fourmi {
 	 */
 	public void incrementAge() {
 		this.age++;
+		this.evolution();
 	}
 
 	public boolean getSexe() {
@@ -75,7 +77,7 @@ public class Fourmi {
 
 	//TODO
 	public void evolution() {
-		
+		if()
 	}
 	
 	//TODO
