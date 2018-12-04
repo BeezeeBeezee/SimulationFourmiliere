@@ -22,7 +22,7 @@ public class Fourmiliere {
 		age=0;
 		listeFourmis = new ArrayList<Fourmi>();
 
-		laReine= new Fourmi(0);
+		laReine= new Fourmi();
 
 		adulteReine=(Adulte)laReine.getEtape();
 		roleReine= new Reine();
@@ -56,11 +56,6 @@ public class Fourmiliere {
 		
 		this.quantiteNourriture=nouvelleQuantite;
 		
-	}
-	
-	public void addFourmi() {
-		listeFourmis.add(new Fourmi(idFourmi));
-		idFourmi++;
 	}
 	
 	

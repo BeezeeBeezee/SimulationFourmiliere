@@ -27,12 +27,12 @@ class TestOuvriere {
 		
 		Fourmiliere laFourmilliere= new Fourmiliere();
 		laFourmilliere.setQuantiteNourriture(100);
-		Fourmi ouvriere = new Fourmi(0);
+		Fourmi ouvriere = new Fourmi();
 		Ouvriere ouv= new Ouvriere();
 		Adulte ad=(Adulte)ouvriere.getEtape();
 		ad.setRole(ouv);
 		
-		Fourmi leTest= new Fourmi(3);
+		Fourmi leTest= new Fourmi();
 		
 		System.out.println(leTest.getResteAManger());
 		System.out.println(laFourmilliere.getQuantiteNourrirture());

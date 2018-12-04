@@ -13,8 +13,7 @@ public class Fourmi {
 	/**
 	 * Creation d'une fourmi
 	 */
-	public Fourmi(int id){
-		this.id = id;                                                                                                                                                                                                           
+	public Fourmi(){                                                                                                                                                                                                       
 		age = 0;
 		vivant = true;
 		etape = new Oeuf();
