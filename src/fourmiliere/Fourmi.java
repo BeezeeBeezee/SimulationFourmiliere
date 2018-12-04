@@ -52,9 +52,14 @@ public class Fourmi {
 	/*
 	 * Vieillissement d'une fourmi d'un jour
 	 */
-	public void incrementAge() {
+	public boolean incrementAge() {
 		this.age++;
-		this.evolution();
+		return this.evolution();
+	}
+	
+	public boolean ajoutAge(int nbAgeAjouter) {
+		this.age = this.age + nbAgeAjouter;
+		return this.evolution();
 	}
 
 	public boolean getSexe() {
@@ -86,7 +91,7 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
-	public boolean evolution() {
+	private boolean evolution() {
 		boolean resultat = false;
 		
 		if(this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.age>3) {
@@ -104,7 +109,7 @@ public class Fourmi {
 	}
 	
 	public void isGonnaDie() {
-		if(! (this.getClass().getName()=="fourmiliere.Oeuf" && this.getClass().getName()=="fourmiliere.Nymphe") ) {
+		if(! (this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.getEtape().getClass().getName()=="fourmiliere.Nymphe") ) {
 			if(this.getEtape().getResteAManger() > 0) {
 				this.vivant = false;
 			}

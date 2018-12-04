@@ -33,48 +33,18 @@ class TestFourmi {
 		Fourmi f = new Fourmi();
 		f.incrementAge();
 		f.incrementAge();
+		assert(f.getEtape().getClass().getName() == "fourmiliere.Oeuf");
 		f.incrementAge();
 		f.incrementAge();
-		f.evolution();
-		System.out.println(f.toString());
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.evolution();
-		System.out.println(f.toString());
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.incrementAge();
-		f.evolution();
-		System.out.println(f.toString());
+		assert(f.getEtape().getClass().getName() == "fourmiliere.Larve");
 	}
 	
 	@Test
 	void testIsGonnaDie() {
-		
+		Fourmi f = new Fourmi();
+		f.incrementAge();
+		f.isGonnaDie();
+		assert(f.getVivant()==true);
 	}
 
 }
