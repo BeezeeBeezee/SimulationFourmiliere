@@ -15,6 +15,7 @@ public class Fourmiliere {
 	static int idFourmi = 0;
 
 	
+	
 	public Fourmiliere(){
 		
 		quantiteNourriture=0;
