@@ -9,7 +9,7 @@ public class Temps {
 	
 	int leTemps; // le temps est definit en jour
 	
-	Temps(Fourmiliere laFour) {
+	Temps() {
 		leTemps=0;
 		
 	}
