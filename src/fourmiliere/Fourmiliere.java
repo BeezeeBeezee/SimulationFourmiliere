@@ -11,7 +11,7 @@ public class Fourmiliere {
 
 	
 	
-	double getQuantiteNourrirture() {
+	public double getQuantiteNourrirture() {
 		return this.quantiteNourriture;
 	}
 	
