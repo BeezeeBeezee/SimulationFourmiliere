@@ -6,6 +6,9 @@ public class Adulte extends Etape{
 
 	private Role role;
 	
+	/**
+	 * Constructeur de Adulte avec initialisation des variables
+	 **/
 	public Adulte() {
 		super();
 		double unPoids =  Math.random() * 2.5 + 1.5;
@@ -47,17 +50,26 @@ public class Adulte extends Etape{
 		return this.resteAManger;
 	}
 
+	/**
+	 * Méthode qui fait manger l'adulte
+	 **/
 	@Override
 	public boolean mange(double aEteMange) {
 		this.resteAManger -= aEteMange;		
 		return this.resteAManger > 0;	
 	}
 
+	/**
+	 * Méthode qui remet à zéro la faim de l'adulte
+	 **/
 	@Override
 	public void vaManger() {
 		this.resteAManger = this.poids;
 	}
-	
+
+	/**
+	 * Méthode qui affiche les variables
+	 **/
 	@Override
 	public String toString() {
 		return "Oeuf[poids="+this.poids+ " , resteAManger=" + this.resteAManger +", role=" + this.role.toString() + "]";

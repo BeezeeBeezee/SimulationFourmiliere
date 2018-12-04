@@ -1,4 +1,4 @@
-package ihm;
+package test;
 
 import fourmiliere.Adulte;
 import fourmiliere.Etape;

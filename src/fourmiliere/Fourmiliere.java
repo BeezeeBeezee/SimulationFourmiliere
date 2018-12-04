@@ -12,6 +12,7 @@ public class Fourmiliere {
 	Adulte adulteReine;
 	Reine roleReine;
 	public ArrayList<Fourmi> listeFourmis;
+	static int idFourmi = 0;
 
 	
 	public Fourmiliere(){
@@ -19,7 +20,11 @@ public class Fourmiliere {
 		quantiteNourriture=0;
 		age=0;
 		listeFourmis = new ArrayList<Fourmi>();
+<<<<<<< HEAD
 		laReine= new Fourmi("laReine");
+=======
+		laReine= new Fourmi(0,"une reine");
+>>>>>>> branch 'master' of https://github.com/BeezeeBeezee/SimulationFourmiliere.git
 		adulteReine=(Adulte)laReine.getEtape();
 		roleReine= new Reine();
 		adulteReine.setRole(roleReine);
@@ -52,6 +57,11 @@ public class Fourmiliere {
 		
 		this.quantiteNourriture=nouvelleQuantite;
 		
+	}
+	
+	public void addFourmi() {
+		listeFourmis.add(new Fourmi(idFourmi));
+		idFourmi++;
 	}
 	
 	

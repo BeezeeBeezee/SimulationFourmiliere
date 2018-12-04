@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import fourmiliere.Adulte;
 import fourmiliere.Fourmi;
+import fourmiliere.Fourmiliere;
 import fourmiliere.Larve;
 import fourmiliere.Nymphe;
 import fourmiliere.Oeuf;
@@ -15,7 +16,7 @@ class TestEtape {
 
 	@Test
 	void test() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(0);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		assert(f.getVivant()==true);
@@ -66,8 +67,6 @@ class TestEtape {
 		assertTrue((unAd.getResteAManger() + 0.5) == valeurMangerAvant);
 		unAd.vaManger();
 		assertTrue(unAd.getResteAManger() == valeurMangerAvant);
-		
-
 	}
 	
 }
