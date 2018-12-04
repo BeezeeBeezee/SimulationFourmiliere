@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import fourmiliere.Adulte;
 import fourmiliere.Fourmi;
+import fourmiliere.Fourmiliere;
 import fourmiliere.Larve;
 import fourmiliere.Nymphe;
 import fourmiliere.Oeuf;
@@ -67,7 +68,6 @@ class TestEtape {
 		unAd.vaManger();
 		assertTrue(unAd.getResteAManger() == valeurMangerAvant);
 		
-
 	}
 	
 }
