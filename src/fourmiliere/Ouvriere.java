@@ -5,6 +5,8 @@ public class Ouvriere extends Role{
 	
 	public Ouvriere() {
 		
+		super();
+		
 	}
 	
 	
