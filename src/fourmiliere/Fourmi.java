@@ -21,6 +21,7 @@ public class Fourmi {
 		this.setSexeRandom();
 	}
 	
+	//TODO A supprimer
 	public Fourmi(int id, int Larve){
 		this.id = id;                                                                                                                                                                                                                 
 		age = 0;
@@ -29,6 +30,7 @@ public class Fourmi {
 		this.setSexeRandom();
 	}
 	
+	//TODO A supprimer
 	public Fourmi(int id, String Adulte){
 		this.id = id;                                                                                                                                                                                                     
 		age = 0;
