@@ -27,5 +27,54 @@ class TestFourmi {
 		System.out.println(f.toString());
 		assert(f.getAge()==1);
 	}
+	
+	@Test
+	void testEvolution() {
+		Fourmi f = new Fourmi();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.evolution();
+		System.out.println(f.toString());
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.evolution();
+		System.out.println(f.toString());
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.evolution();
+		System.out.println(f.toString());
+	}
+	
+	@Test
+	void testIsGonnaDie() {
+		
+	}
 
 }

@@ -86,21 +86,28 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
-	public void evolution() {
-		if(this.getClass().getName()=="Oeuf" && this.age>3) {
+	public boolean evolution() {
+		boolean resultat = false;
+		
+		if(this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.age>3) {
 			this.etape = new Larve();
-		}
-		if(this.getClass().getName()=="Larve" && this.age>13) {
+			resultat = true;
+		}else if(this.getEtape().getClass().getName()=="fourmiliere.Larve" && this.age>13) {
 			this.etape = new Nymphe();
-		}
-		if(this.getClass().getName()=="Nymphe" && this.age>30) {
+			resultat = true;
+		}else if(this.getEtape().getClass().getName()=="fourmiliere.Nymphe" && this.age>30) {
 			this.etape = new Adulte();
+			resultat = true;
 		}
+		
+		return resultat;
 	}
 	
 	public void isGonnaDie() {
-		if(this.getEtape().getResteAManger() > 0) {
-			this.vivant = false;
+		if(! (this.getClass().getName()=="fourmiliere.Oeuf" && this.getClass().getName()=="fourmiliere.Nymphe") ) {
+			if(this.getEtape().getResteAManger() > 0) {
+				this.vivant = false;
+			}
 		}
 	}
 
