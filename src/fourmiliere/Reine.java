@@ -2,15 +2,17 @@ package fourmiliere;
 
 public class Reine extends Role{
 	
-	Reine(){
+	public Reine(){
 		
 		super();
 	}
 	
 	
-	Fourmi pond() {
+	public Fourmi pond(Fourmiliere f) {
 		
 		Fourmi laFourmi= new Fourmi();
+		f.listeFourmis.add(laFourmi);
+		
 		return laFourmi;
 		
 	}

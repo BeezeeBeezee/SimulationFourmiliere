@@ -9,6 +9,8 @@ public class Fourmiliere {
 	int age;
 	String nomFourmiliere;
 	Fourmi laReine;
+	Adulte adulteReine;
+	Reine roleReine;
 	public ArrayList<Fourmi> listeFourmis;
 
 	
@@ -23,6 +25,22 @@ public class Fourmiliere {
 		adulteReine.setRole(roleReine);
 		
 		
+	}
+	
+	public Role getRoleReine() {
+		return roleReine;
+	}
+	
+	public Adulte getAdulteReine() {
+		return adulteReine;
+	}
+	
+	public Fourmi getlaReine() {
+		return laReine;
+	}
+	
+	public void pond() {
+		this.roleReine.pond(this);
 	}
 	
 	

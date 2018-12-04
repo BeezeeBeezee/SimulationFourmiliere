@@ -1,18 +1,19 @@
 package coeurSimulateur;
 
+import fourmiliere.Fourmi;
+import fourmiliere.Fourmiliere;
+
 public class main {
 
 	public static void main(String[] args) {
 		
 		Temps test = new Temps();	
-		while(true) {
-
-			
-			System.out.println(test.leTemps);
-			test.lireLeTemps();
-			System.out.println(test.leTemps);
 		
-		}
+		Fourmiliere f= new Fourmiliere();
+		
+		test.stepFourmiliere(f);
+		
+		
 	}
 
 }

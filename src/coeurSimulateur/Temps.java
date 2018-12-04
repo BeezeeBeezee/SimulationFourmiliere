@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import fourmiliere.Fourmi;
 import fourmiliere.Fourmiliere;
+import fourmiliere.Reine;
 
 public class Temps {
 	
@@ -27,22 +28,36 @@ public class Temps {
 	
 	
 	void stepFourmiliere(Fourmiliere laFour) {
+	
+		Reine ponte=(Reine)laFour.getRoleReine();
 		
+		while(true) {
 		
-		
+			int ancienTemps= leTemps;
+			lireLeTemps();
+			
+			for(int i=0;i<=laFour.listeFourmis.size()-1;i++) {
+				
+				stepFourmi(laFour.listeFourmis.get(i)  ,  this.leTemps-ancienTemps);
+				
+			}
+			
+			for(int i=0;i<=this.leTemps-ancienTemps-1;i++) {
+			
+			
+				ponte.pond(laFour);
+			
+			}
+		}
 		
 	}
 	
-	void stepFourmi(Fourmi f) {
+	void stepFourmi(Fourmi f, int time) {
 		
 		
-		while(true) {
-			int ancienTemps= leTemps;
-			lireLeTemps();
-			f.incrementAge();
-			if(f.getAge()>3)
-				f.evolution();
-		}
+			f.ajoutAge(time);
+		
+			System.out.println(f.toString());
 		
 	}
 	
