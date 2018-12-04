@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Fourmi {
 	
-	public int id;
+	private int id;
 	private int age;
 	private boolean sexe;
 	private Boolean vivant;
