@@ -58,6 +58,7 @@ class TestFourmi {
 		f.ajoutAge(5);
 		f.isGonnaDie();
 		assert(f.getVivant()==false);
+		//blabla
 	}
 
 }
