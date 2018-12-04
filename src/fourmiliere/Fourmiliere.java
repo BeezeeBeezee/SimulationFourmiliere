@@ -8,6 +8,7 @@ public class Fourmiliere {
 	private double quantiteNourriture;
 	int age;
 	String nomFourmiliere;
+	Fourmi laReine;
 	public ArrayList<Fourmi> listeFourmis;
 
 	
@@ -16,6 +17,11 @@ public class Fourmiliere {
 		quantiteNourriture=0;
 		age=0;
 		listeFourmis = new ArrayList<Fourmi>();
+		laReine= new Fourmi("une reine");
+		Adulte adulteReine=(Adulte)laReine.getEtape();
+		Reine roleReine= new Reine();
+		adulteReine.setRole(roleReine);
+		
 		
 	}
 	
