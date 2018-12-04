@@ -46,4 +46,10 @@ public class Nymphe extends Etape{
 	public String toString() {
 		return "Nymphe[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
 	}
+
+	@Override
+	Etape etatSuivant() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

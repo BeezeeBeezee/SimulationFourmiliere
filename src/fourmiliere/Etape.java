@@ -11,5 +11,6 @@ public abstract class Etape {
 	
 	abstract double getResteAManger();
 	abstract void vaManger();
+	abstract Etape etatSuivant();
 	
 }

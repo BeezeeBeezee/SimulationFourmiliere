@@ -10,5 +10,7 @@ public class Sexue extends Role{
 		return "sexue";
 	}
 	
-	
+	public void part() {
+		
+	}
 }

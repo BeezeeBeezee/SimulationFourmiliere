@@ -72,6 +72,12 @@ public class Adulte extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Oeuf[poids="+this.poids+ " , resteAManger=" + this.resteAManger +", role=" + this.role.toString() + "]";
+		return "Adulte[poids="+this.poids+ " , resteAManger=" + this.resteAManger +", role=" + this.role.toString() + "]";
+	}
+
+	@Override
+	Etape etatSuivant() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
