@@ -31,9 +31,7 @@ public class Ouvriere extends Role{
 	}
 	
 	public void nourrir(Fourmiliere laFourmiliere){
-		
-		double quantite = laFourmiliere.getQuantiteNourrirture();
-		
+				
 		for(int i=0;i<=laFourmiliere.listeFourmis.size()-1;i++) {
 			
 			nourrir(laFourmiliere.listeFourmis.get(i), laFourmiliere);
