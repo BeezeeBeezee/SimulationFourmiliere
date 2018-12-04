@@ -48,8 +48,10 @@ public class Nymphe extends Etape{
 	}
 
 	@Override
-	Etape etatSuivant() {
-		// TODO Auto-generated method stub
-		return null;
+	Etape etatSuivant(int age) {
+		if( age > 30) {
+			return new Adulte();
+		}
+		return this;
 	}
 }

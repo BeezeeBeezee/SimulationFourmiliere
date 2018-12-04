@@ -76,8 +76,7 @@ public class Adulte extends Etape{
 	}
 
 	@Override
-	Etape etatSuivant() {
-		// TODO Auto-generated method stub
-		return null;
+	Etape etatSuivant(int age) {
+		return this;
 	}
 }

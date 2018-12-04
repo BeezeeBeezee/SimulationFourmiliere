@@ -81,7 +81,7 @@ public class Fourmi {
 	}
 
 	private void evolution() {
-		this.etape = etape.etatSuivant();
+		this.etape = etape.etatSuivant(this.age);
 	}
 	
 	/**

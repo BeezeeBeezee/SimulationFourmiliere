@@ -49,8 +49,11 @@ public class Oeuf extends Etape{
 	}
 
 	@Override
-	Etape etatSuivant() {
-		return null;
+	Etape etatSuivant(int age) {
+		if(age > 3) {
+			return new Larve();
+		}
+		return this;
 	}
 	
 	
