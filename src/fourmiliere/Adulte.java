@@ -8,7 +8,8 @@ public class Adulte extends Etape{
 	
 	public Adulte() {
 		super();
-		this.poids =  Math.random() * 2.5 + 1.5;;
+		double unPoids =  Math.random() * 2.5 + 1.5;
+		this.poids = (double) Math.round(unPoids * 100) / 100;;
 		this.resteAManger = this.poids;
 		
 		double roleFinal = Math.random() * 99 + 1;
@@ -26,7 +27,6 @@ public class Adulte extends Etape{
 		}
 		
 	}
-	
 	
 	public Role getRole() {
 		return role;
