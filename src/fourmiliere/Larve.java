@@ -2,9 +2,11 @@ package fourmiliere;
 
 public class Larve extends Etape{
 
-	public Larve(double poids, double resteAManger) {
-		super.poids = poids;
-		super.resteAManger = resteAManger;
+	public Larve() {
+		super();
+		this.poids = Math.random() * 8 + 4.5;
+		this.resteAManger = this.poids;
+		// TO DO
 	}
 	
 	@Override

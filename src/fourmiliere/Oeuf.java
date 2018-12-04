@@ -2,9 +2,10 @@ package fourmiliere;
 
 public class Oeuf extends Etape{
 
-	public Oeuf(double poids, double resteAManger) {
-		super.poids = poids;
-		super.resteAManger = resteAManger;
+	public Oeuf() {
+		super();
+		this.poids = Math.random() * 1 + 0.1;
+		this.resteAManger = 0;
 	}
 	
 	@Override
