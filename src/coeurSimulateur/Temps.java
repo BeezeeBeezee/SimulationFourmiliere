@@ -34,29 +34,24 @@ public class Temps {
 	void stepFourmiliere(Fourmiliere laFour) {
 
 		
-		int nvTemps= lireLeTemps();
 		int tempsFixe=leTemps;
 		
 		Reine ponte = (Reine) laFour.getRoleReine();
 
 
-			for (int i = 0; i <= nvTemps - tempsFixe - 1; i++) {
-
 				ponte.pond(laFour);
 		
 				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
 	
-					stepFourmi(laFour.listeFourmis.get(j), nvTemps-this.leTemps);
+					stepFourmi(laFour.listeFourmis.get(j),1);
 	
 				}
-
-				
+			
 			
 			leTemps++;
-			}
-			
 
-	}
+			
+		}
 
 	/**
 	 * fait grandir une fourmi de x jours

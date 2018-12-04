@@ -1,6 +1,7 @@
 package coeurSimulateur;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import fourmiliere.Fourmi;
 import fourmiliere.Fourmiliere;
@@ -11,7 +12,7 @@ public class main {
 	
 	
 		
-
+		int nbJours=0;
 		
 		Temps test = new Temps();	
 		
@@ -21,12 +22,28 @@ public class main {
 			
 			test.stepFourmiliere(f);
 			
+			
+			System.out.println("----------jour"+nbJours+"---------------");
+			
 			for(int i=0;i<=f.listeFourmis.size()-1;i++) {
+				
 				
 				System.out.println(f.listeFourmis.get(i));
 				
+
 			}
 			
+			System.out.println();
+			
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			nbJours++;
 		}
 		
 		
