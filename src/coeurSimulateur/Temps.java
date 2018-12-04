@@ -20,7 +20,7 @@ public class Temps {
 		Scanner leScan = new Scanner(System.in);
 		int leTime = leScan.nextInt();
 
-		return leTime;
+		return leTemps+leTime;
 
 	}
 
@@ -32,28 +32,27 @@ public class Temps {
 	 */
 	void stepFourmiliere(Fourmiliere laFour) {
 
+		
+		int nvTemps= lireLeTemps();
+		int tempsFixe=leTemps;
+		
 		Reine ponte = (Reine) laFour.getRoleReine();
 
-		while (true) {
 
-			int ancienTemps = leTemps;
-			int nvTemps=lireLeTemps();
-
-			for (int i = 0; i <= nvTemps - ancienTemps - 1; i++) {
+			for (int i = 0; i <= nvTemps - tempsFixe - 1; i++) {
 
 				ponte.pond(laFour);
-
-			}
-
-			for (int i = 0; i <= laFour.listeFourmis.size() - 1; i++) {
-
-				stepFourmi(laFour.listeFourmis.get(i), this.leTemps+i);
-
-			}
+		
+				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
+	
+					stepFourmi(laFour.listeFourmis.get(j), nvTemps-this.leTemps);
+	
+				}
 
 			
-			leTemps=leTemps+nvTemps;
-		}
+			leTemps++;
+			}
+			
 
 	}
 
@@ -66,11 +65,7 @@ public class Temps {
 	void stepFourmi(Fourmi f, int time) {
 
 		f.ajoutAge(time);
-
-		System.out.println(f.toString());
 		
-		leTemps=leTemps+time;
-
 	}
 
 }

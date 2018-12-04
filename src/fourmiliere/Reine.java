@@ -11,13 +11,8 @@ public class Reine extends Role{
 		
 		Fourmi laFourmi= new Fourmi(0);
 		f.listeFourmis.add(laFourmi);
-<<<<<<< HEAD
-		laFourmi.id=f.listeFourmis.indexOf(laFourmi);
-		
-		
-=======
-		return laFourmi;
->>>>>>> branch 'master' of https://github.com/BeezeeBeezee/SimulationFourmiliere.git
+		laFourmi.setId(f.listeFourmis.indexOf(laFourmi));	
+
 	}
 
 }

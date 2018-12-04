@@ -31,7 +31,7 @@ public class Fourmi {
 	}
 	
 	//TODO A supprimer
-	public Fourmi(int id, String Adulte){
+	public Fourmi(String Adulte){
 		this.id = id;                                                                                                                                                                                                     
 		age = 0;
 		vivant = true;
@@ -54,6 +54,11 @@ public class Fourmi {
 		this.age++;
 		return this.evolution();
 	}
+
+	public void setId(int id) {
+		this.id=id;
+	}
+	
 	
 	/**
 	 * Vieillissement d'une fourmi de nbAgeAjouter.

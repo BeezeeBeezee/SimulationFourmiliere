@@ -16,7 +16,17 @@ public class main {
 		
 		Fourmiliere f= new Fourmiliere();
 		
-		test.stepFourmiliere(f);
+		while(true) {
+			
+			test.stepFourmiliere(f);
+			
+			for(int i=0;i<=f.listeFourmis.size()-1;i++) {
+				
+				System.out.println(f.listeFourmis.get(i));
+				
+			}
+			
+		}
 		
 		
 	}
