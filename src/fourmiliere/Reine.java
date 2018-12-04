@@ -14,5 +14,10 @@ public class Reine extends Role{
 		laFourmi.setId(f.listeFourmis.indexOf(laFourmi));	
 
 	}
+	
+
+	
+
+	
 
 }

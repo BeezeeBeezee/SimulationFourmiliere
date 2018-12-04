@@ -42,14 +42,16 @@ public class Temps {
 				ponte.pond(laFour);
 		
 				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
-	
+					
+					
+					laFour.listeFourmis.get(j).isGonnaDie();
+					
+					
+					
 					stepFourmi(laFour.listeFourmis.get(j),1);
-	
-				}
-			
+				}			
 			
 			leTemps++;
-
 			
 		}
 
@@ -64,5 +66,9 @@ public class Temps {
 		f.ajoutAge(time);
 		
 	}
+	
+	
+	
+	
 
 }
