@@ -29,5 +29,12 @@ public class Oeuf extends Etape{
 	void vaManger() {
 		this.resteAManger = 0;
 	}
+
+	@Override
+	public String toString() {
+		return "Oeuf[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
+	}
+	
+	
 	
 }

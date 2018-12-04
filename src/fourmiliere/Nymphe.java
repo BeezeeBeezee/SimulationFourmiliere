@@ -28,4 +28,9 @@ public class Nymphe extends Etape{
 	void vaManger() {
 		this.resteAManger = 0;
 	}
+	
+	@Override
+	public String toString() {
+		return "Nymphe[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
+	}
 }

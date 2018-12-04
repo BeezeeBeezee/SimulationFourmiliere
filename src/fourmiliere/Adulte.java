@@ -57,4 +57,9 @@ public class Adulte extends Etape{
 	void vaManger() {
 		this.resteAManger = this.poids;
 	}
+	
+	@Override
+	public String toString() {
+		return "Oeuf[poids="+this.poids+ " , resteAManger=" + this.resteAManger +", role=" + this.role.toString() + "]";
+	}
 }
