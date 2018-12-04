@@ -8,12 +8,11 @@ public class Reine extends Role{
 	}
 	
 	
-	public Fourmi pond(Fourmiliere f) {
+	public void pond(Fourmiliere f) {
 		
 		Fourmi laFourmi= new Fourmi();
 		f.listeFourmis.add(laFourmi);
 		
-		return laFourmi;
 		
 	}
 
