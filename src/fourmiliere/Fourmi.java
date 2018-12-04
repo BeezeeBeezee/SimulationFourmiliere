@@ -57,6 +57,9 @@ public class Fourmi {
 		return this.evolution();
 	}
 	
+	/*
+	 * Vieillissement d'une fourmi de nbAgeAjouter
+	 */
 	public boolean ajoutAge(int nbAgeAjouter) {
 		this.age = this.age + nbAgeAjouter;
 		return this.evolution();
@@ -91,6 +94,10 @@ public class Fourmi {
 		return etape.mange(aEteMange); 
 	}
 
+	/**
+	 * Methode permettant de faire evoluer si besoin la fourmi.
+	 * @return true si l'evolution a eu lieu, false sinon
+	 */
 	private boolean evolution() {
 		boolean resultat = false;
 		
@@ -108,8 +115,13 @@ public class Fourmi {
 		return resultat;
 	}
 	
+	/**
+	 * Methode qui verifie si la fourmi doit mourir ou non selon 
+	 * l'etape et le taux de nourriture de la fourmi
+	 */
 	public void isGonnaDie() {
-		if(! (this.getEtape().getClass().getName()=="fourmiliere.Oeuf" && this.getEtape().getClass().getName()=="fourmiliere.Nymphe") ) {
+		if(! (this.getEtape().getClass().getName()=="fourmiliere.Oeuf" 
+				&& this.getEtape().getClass().getName()=="fourmiliere.Nymphe") ) {
 			if(this.getEtape().getResteAManger() > 0) {
 				this.vivant = false;
 			}

@@ -29,6 +29,16 @@ class TestFourmi {
 	}
 	
 	@Test
+	void testAjoutAge() {
+		Fourmi f = new Fourmi();
+		System.out.println(f.toString());
+		assert(f.getAge()==0);
+		f.ajoutAge(5);
+		System.out.println(f.toString());
+		assert(f.getAge()==5);
+	}
+	
+	@Test
 	void testEvolution() {
 		Fourmi f = new Fourmi();
 		f.incrementAge();
@@ -45,6 +55,9 @@ class TestFourmi {
 		f.incrementAge();
 		f.isGonnaDie();
 		assert(f.getVivant()==true);
+		f.ajoutAge(5);
+		f.isGonnaDie();
+		assert(f.getVivant()==false);
 	}
 
 }
