@@ -18,12 +18,16 @@ public class main {
 		
 		Fourmiliere f= new Fourmiliere();
 		
+		f.setQuantiteNourriture(150);
+		double laBouffe=f.getQuantiteNourrirture();
+		
 		while(true) {
 			
 			test.stepFourmiliere(f);
 			
 			
 			System.out.println("----------jour"+nbJours+"---------------");
+			System.out.println("quantite bouffe:"+laBouffe);
 			
 			for(int i=0;i<=f.listeFourmis.size()-1;i++) {
 				

@@ -43,10 +43,9 @@ public class Temps {
 		
 				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
 					
+					laFour.nourrir();
 					
 					laFour.listeFourmis.get(j).isGonnaDie();
-					
-					
 					
 					stepFourmi(laFour.listeFourmis.get(j),1);
 				}			
