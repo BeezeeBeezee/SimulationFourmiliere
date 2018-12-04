@@ -6,12 +6,13 @@ import fourmiliere.Fourmi;
 import fourmiliere.Nymphe;
 import fourmiliere.Oeuf;
 import fourmiliere.Ouvriere;
+import ihm.Simulation;
 
 public class TestInterface {
 
 	public static void main(String[] args) {
-		//Simulation uneSimulation = new Simulation();
-		//uneSimulation.creerFourmiliere();
+		Simulation uneSimulation = new Simulation();
+		uneSimulation.creerFourmiliere();
 		
 	}
 
