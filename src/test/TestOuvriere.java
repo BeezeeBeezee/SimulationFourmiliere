@@ -21,7 +21,7 @@ class TestOuvriere {
 	void tearDown() throws Exception {
 	}
 
-	@Test
+	/*@Test
 	void test() {
 		Fourmiliere laFourmilliere= new Fourmiliere();
 		laFourmilliere.setQuantiteNourriture(100);
@@ -42,5 +42,5 @@ class TestOuvriere {
 		System.out.println(leTest.getResteAManger());
 		System.out.println(laFourmilliere.getQuantiteNourrirture());
 		assertTrue(true);
-	}
+	}*/
 }
