@@ -23,4 +23,9 @@ public class Nymphe extends Etape{
 		this.resteAManger -= aEteMange;		
 		return this.resteAManger > 0;	
 	}
+
+	@Override
+	void vaManger() {
+		this.resteAManger = 0;
+	}
 }

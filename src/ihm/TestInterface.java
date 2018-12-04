@@ -1,6 +1,9 @@
 package ihm;
 
+import fourmiliere.Etape;
 import fourmiliere.Fourmi;
+import fourmiliere.Nymphe;
+import fourmiliere.Oeuf;
 
 public class TestInterface {
 
@@ -8,7 +11,8 @@ public class TestInterface {
 		//Simulation uneSimulation = new Simulation();
 		//uneSimulation.creerFourmiliere();
 		
-		Fourmi fourm1 = new Fourmi();
+		
+
 
 	}
 

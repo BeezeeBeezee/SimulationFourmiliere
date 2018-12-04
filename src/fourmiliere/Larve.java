@@ -24,4 +24,11 @@ public class Larve extends Etape{
 		this.resteAManger -= aEteMange;		
 		return this.resteAManger > 0;	
 	}
+
+	@Override
+	void vaManger() {
+		this.resteAManger = this.poids;
+	}
+	
+	
 }

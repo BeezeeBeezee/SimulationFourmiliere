@@ -10,5 +10,6 @@ public abstract class Etape {
 	abstract boolean mange(double aEteMange);
 	
 	abstract double getResteAManger();
+	abstract void vaManger();
 	
 }

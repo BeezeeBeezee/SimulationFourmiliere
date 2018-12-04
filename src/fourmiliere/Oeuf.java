@@ -24,7 +24,10 @@ public class Oeuf extends Etape{
 	boolean mange(double aEteMange) {
 		return false;
 	}
-	
-	
 
+	@Override
+	void vaManger() {
+		this.resteAManger = 0;
+	}
+	
 }
