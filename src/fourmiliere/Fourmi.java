@@ -1,4 +1,4 @@
-package fourmiliere;
+   package fourmiliere;
 
 import java.util.Random;
 
@@ -20,6 +20,24 @@ public class Fourmi {
 		age = 0;
 		vivant = true;
 		etape = new Oeuf();
+		this.setSexeRandom();
+	}
+	
+	public Fourmi(int larve){
+		id = incrementId;
+		id++;                                                                                                                                                                                                                      
+		age = 0;
+		vivant = true;
+		etape = new Larve();
+		this.setSexeRandom();
+	}
+	
+	public Fourmi(String Adulte){
+		id = incrementId;
+		id++;                                                                                                                                                                                                                      
+		age = 0;
+		vivant = true;
+		etape = new Adulte();
 		this.setSexeRandom();
 	}
 	
@@ -68,16 +86,15 @@ public class Fourmi {
 		return etape.getResteAManger();
 	}
 	
-	/*
-	 * 
-	 */
 	public boolean mange(double aEteMange) {
 		return etape.mange(aEteMange); 
 	}
 
 	//TODO
 	public void evolution() {
-		if()
+		if(this.getClass().getName()=="Oeuf" && this.age>3) {
+			this.etape = new Larve();
+		}
 	}
 	
 	//TODO
