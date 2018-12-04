@@ -67,7 +67,6 @@ class TestEtape {
 		assertTrue((unAd.getResteAManger() + 0.5) == valeurMangerAvant);
 		unAd.vaManger();
 		assertTrue(unAd.getResteAManger() == valeurMangerAvant);
-		
 	}
 	
 }

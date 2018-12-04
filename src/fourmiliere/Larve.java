@@ -38,7 +38,7 @@ public class Larve extends Etape{
 	public void vaManger() {
 		this.resteAManger = this.poids;
 	}
-	
+	 
 	/**
 	 * Méthode qui affiche les variables
 	 **/

@@ -38,6 +38,7 @@ public class Nymphe extends Etape{
 		this.resteAManger = 0;
 	}
 	
+	
 	/**
 	 * Méthode qui affiche les variables
 	 **/

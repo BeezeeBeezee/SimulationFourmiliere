@@ -18,6 +18,7 @@ public class Oeuf extends Etape{
 		return this.poids;
 	}
 
+
 	@Override
 	public double getResteAManger() {
 		return this.resteAManger;
