@@ -12,6 +12,7 @@ public class Reine extends Role{
 		
 		Fourmi laFourmi= new Fourmi();
 		f.listeFourmis.add(laFourmi);
+		laFourmi.id=f.listeFourmis.indexOf(laFourmi);
 		
 		
 	}

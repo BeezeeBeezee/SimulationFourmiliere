@@ -6,4 +6,9 @@ public class Soldat extends Role{
 		super();
 	}
 	
+	
+	public String toString() {
+		return " soldat";
+	}
+	
 }

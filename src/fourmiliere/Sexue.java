@@ -6,4 +6,9 @@ public class Sexue extends Role{
 		super();
 	}
 
+	public String toString() {
+		return "sexue";
+	}
+	
+	
 }

@@ -43,5 +43,13 @@ public class Ouvriere extends Role{
 				
 	}
 	
-
+	public String toString() {
+		
+		return "ouvriere";
+		
+	}
+	
+	
+	
+	
 }
