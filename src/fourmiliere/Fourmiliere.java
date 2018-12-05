@@ -91,4 +91,17 @@ public class Fourmiliere {
 	} 
 	
 	
+	public boolean addListe(Fourmi f) {
+		return listeFourmis.add(f);
+	}
+	
+	public boolean remove(Fourmi f) {
+		return listeFourmis.remove(f);
+	}
+	
+	public boolean contains(Fourmi f) {
+		return listeFourmis.contains(f);
+	}
+	
+	
 }
