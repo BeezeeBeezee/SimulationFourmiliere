@@ -2,13 +2,13 @@ package fourmiliere;
 
 public class Reine extends Role{
 	
-	public Reine(){
-		super();
+	public Reine(Adulte adulte){
+		super(adulte);
 	}
 	
 	
 	
-	public void travaille(Fourmiliere f) {
+	public void travaille() {
 		nourrir(f);
 	}
 	
@@ -53,9 +53,6 @@ public class Reine extends Role{
 			nourrir(fourm.getElement(i), fourm);
 		}
 				
-	} 
-	
-
-	
+	}
 
 }

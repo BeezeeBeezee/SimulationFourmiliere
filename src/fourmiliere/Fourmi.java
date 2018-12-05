@@ -12,18 +12,20 @@ public class Fourmi extends Animal {
 	private int x;
 	private int y;
 	private boolean isIn;
+	public Fourmiliere fourmiliere;
 	
 	/**
 	 * Creation d'une fourmi
 	 */
-	public Fourmi(){                                                                                                                                                                                                       
+	public Fourmi(Fourmiliere fourmiliere){                                                                                                                                                                                                       
 		age = 0;
 		vivant = true;
-		etape = new Oeuf();
+		etape = new Oeuf(this);
 		this.setSexeRandom();
 		this.x = 0;
 		this.y = 0;
 		this.isIn = true;
+		this.fourmiliere = fourmiliere;
 	}
 	
 	public int getId() {

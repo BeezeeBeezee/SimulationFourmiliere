@@ -5,10 +5,11 @@ public class Nymphe extends Etape{
 	/**
 	 * Constructeur de Nymphe avec initialisation des variables
 	 **/
-	public Nymphe() {
+	public Nymphe(Fourmi fourmi) {
 		super();
 		this.poids = 0;
 		this.resteAManger = 0;
+		this.fourmi = fourmi;
 	}
 	
 	@Override
@@ -50,7 +51,7 @@ public class Nymphe extends Etape{
 	@Override
 	Etape etatSuivant(int age) {
 		if( age > 30) {
-			return new Adulte();
+			return new Adulte(this.fourmi);
 		}
 		this.vaManger();
 		return this;

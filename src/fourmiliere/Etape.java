@@ -2,7 +2,7 @@ package fourmiliere;
 
 public abstract class Etape {
 	
-	
+	protected Fourmi fourmi;
 	protected double poids;
 	protected double resteAManger;
 	

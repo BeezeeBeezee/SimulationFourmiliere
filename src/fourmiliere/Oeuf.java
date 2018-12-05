@@ -5,12 +5,13 @@ public class Oeuf extends Etape{
 	/**
 	 * Constructeur de Oeuf avec initialisation des variables
 	 **/
-	public Oeuf() {
+	public Oeuf(Fourmi fourmi) {
 		super();
 		
 		double unPoids = Math.random() * 1 + 0.1;
 		this.poids = (double) Math.round(unPoids * 100) / 100;
 		this.resteAManger = 0;
+		this.fourmi = fourmi;
 	}
 	
 	@Override
@@ -51,7 +52,7 @@ public class Oeuf extends Etape{
 	@Override
 	Etape etatSuivant(int age) {
 		if(age > 3) {
-			return new Larve();
+			return new Larve(this.fourmi);
 		}
 		this.vaManger();
 		return this;

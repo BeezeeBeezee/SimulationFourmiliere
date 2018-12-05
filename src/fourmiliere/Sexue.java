@@ -2,8 +2,8 @@ package fourmiliere;
 
 public class Sexue extends Role{
 	
-	Sexue(){
-		super();
+	Sexue(Adulte adulte){
+		super(adulte);
 	}
 
 	public String toString() {

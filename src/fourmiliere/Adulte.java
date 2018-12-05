@@ -8,11 +8,12 @@ public class Adulte extends Etape{
 	/**
 	 * Constructeur de Adulte avec initialisation des variables
 	 **/
-	public Adulte() {
+	public Adulte(Fourmi fourmi) {
 		super();
 		double unPoids =  Math.random() * 2.5 + 1.5;
 		this.poids = (double) Math.round(unPoids * 100) / 100;;
 		this.resteAManger = this.poids;
+		this.fourmi = fourmi;
 		
 		double roleFinal = Math.random() * 99 + 1;
 		double roleSoldat = Math.random() * 25 + 20;

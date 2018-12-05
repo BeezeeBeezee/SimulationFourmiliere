@@ -5,11 +5,12 @@ public class Larve extends Etape{
 	/**
 	 * Constructeur de Larve avec initialisation des variables
 	 **/
-	public Larve() {
+	public Larve(Fourmi fourmi) {
 		super();
 		double unPoids = Math.random() * 8 + 4.5;
 		this.poids = (double) Math.round(unPoids * 100) / 100;
 		this.resteAManger = this.poids;
+		this.fourmi = fourmi;
 	}
 	
 	@Override
@@ -50,7 +51,7 @@ public class Larve extends Etape{
 	@Override
 	Etape etatSuivant(int age) {
 		if( age > 13 ) {
-			return new Nymphe();
+			return new Nymphe(this.fourmi);
 		}
 		this.vaManger();
 		return this;
