@@ -49,18 +49,6 @@ public class Fourmi extends Animal {
 			this.evolution();
 		}
 	}
-	
-	/**
-	 * Vieillissement d'une fourmi de nbAgeAjouter.
-	 * @param nbAgeAjouter nombre de jour à ajouter à l'age de la fourmi
-	 * @return true si il y a eu evolution, false sinon
-	 */
-	public void ajoutAge(int nbAgeAjouter) {
-		if(this.vivant == true) {
-			this.age = this.age + nbAgeAjouter;
-			this.evolution();
-		}
-	}
 
 	public boolean getSexe() {
 		return sexe;

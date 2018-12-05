@@ -15,7 +15,6 @@ class TestReine {
 	void test() {
 		
 		Fourmiliere f= new Fourmiliere();
-		f.pond();
 		
 		assertTrue(f.getSize()==1);
 		
