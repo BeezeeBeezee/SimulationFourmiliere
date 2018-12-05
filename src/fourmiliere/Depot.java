@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Depot {
 
-	private List<Animal> lesCadavres;
+	private List<Animal> lesCadavres; // Liste des fourmis et proies mortes
 	
 	public Depot() {	
 		this.lesCadavres = new ArrayList<Animal>();
