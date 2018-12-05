@@ -7,6 +7,8 @@ public class Soldat extends Role{
 	}
 	
 	
+	public void travaille() {}
+	
 	public String toString() {
 		return " soldat";
 	}

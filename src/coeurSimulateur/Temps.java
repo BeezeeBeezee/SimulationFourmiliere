@@ -34,20 +34,17 @@ public class Temps {
 	void stepFourmiliere(Fourmiliere laFour) {
 
 		
-		int tempsFixe=leTemps;
-		
-		Reine ponte = (Reine) laFour.getRoleReine();
-
+	
 
 				
 				int leRandom=(int) (Math.random()*5 + 1);
 				
 				if(leRandom==2)
-				ponte.pond(laFour);
+					laFour.getlaReine().step();
 				
 				if(leRandom==3) {
-					ponte.pond(laFour);
-					ponte.pond(laFour);
+					laFour.getlaReine().step();
+					laFour.getlaReine().step();
 				
 				}
 

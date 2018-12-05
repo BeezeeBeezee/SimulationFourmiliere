@@ -39,8 +39,17 @@ public class Fourmiliere {
 		return laReine;
 	}
 	
-	public void pond() {
-		this.roleReine.pond(this);
+	public void travaille() {
+		
+		laReine.step();
+		
+		for(int i=0;i<=listeFourmis.size()-1;i++) {
+			
+			listeFourmis.get(i).step();
+			
+		}
+		
+
 	}
 	
 	

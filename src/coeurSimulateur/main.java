@@ -18,7 +18,7 @@ public class main {
 		
 		Fourmiliere f= new Fourmiliere();
 		
-		f.setQuantiteNourriture(1000000000);
+		f.setQuantiteNourriture(100);
 
 		
 		while(true) {
