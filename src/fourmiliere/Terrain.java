@@ -54,7 +54,7 @@ public class Terrain {
 		verifierPheromones(fourmi);
 		
 		if ((probaDeplacement > 0) && (probaDeplacement < this.pourcentageGauche)) { //Deplacement à gauche		
-			nouvPos = fourmi.getX() - 1;
+			nouvPos = fourmi.getX() - 10;
 			if (nouvPos < 0) {
 				nouvPos = 0;
 			}
@@ -62,7 +62,7 @@ public class Terrain {
 		}
 		
 		else if ((probaDeplacement > this.pourcentageGauche - 1 ) && (probaDeplacement < this.pourcentageGauche + this.pourcentageDroite)) { //Deplacement à droite
-			nouvPos = fourmi.getX() + 1;
+			nouvPos = fourmi.getX() + 10;
 			if (nouvPos > 600) {
 				nouvPos = 600;
 			}
@@ -70,14 +70,14 @@ public class Terrain {
 		}
 		
 		else if ((probaDeplacement > this.pourcentageGauche + this.pourcentageDroite -1 ) && (probaDeplacement < this.pourcentageGauche + this.pourcentageDroite + this.pourcentageBas)) { //Deplacement vers le bas
-			nouvPos = fourmi.getY() + 1;
+			nouvPos = fourmi.getY() + 10;
 			if (nouvPos > 600) {
 				nouvPos = 600;
 			}
 			fourmi.setY(nouvPos);
 		}		
 		else { //Deplacement vers le haut
-			nouvPos = fourmi.getY() - 1;
+			nouvPos = fourmi.getY() - 10;
 			if (nouvPos < 0) {
 				nouvPos = 0;
 			}

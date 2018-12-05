@@ -11,7 +11,6 @@ public class Rect extends Morph {
 		super(color, pos, dim);
 		
 	}
-
 	
 	public void draw(Graphics g) {
 		Color c = g.getColor();

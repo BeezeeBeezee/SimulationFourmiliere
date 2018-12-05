@@ -8,14 +8,14 @@ import fourmiliere.Reine;
 
 public class Temps {
 
-	int leTemps; // le temps est definit en jour
+	private int leTemps; // le temps est definit en jour
 
-	Temps() {
+	public Temps() {
 		leTemps = 0;
 
 	}
 
-	int lireLeTemps() {
+	public int lireLeTemps() {
 
 		Scanner leScan = new Scanner(System.in);
 		int leTime = leScan.nextInt();
@@ -31,7 +31,7 @@ public class Temps {
 	 * 
 	 * @param laFour
 	 */
-	void stepFourmiliere(Fourmiliere laFour) {
+	public void stepFourmiliere(Fourmiliere laFour) {
 	
 		laFour.step();
 		laFour.nourrir();			
