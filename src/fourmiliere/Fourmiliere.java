@@ -58,27 +58,26 @@ public class Fourmiliere {
 	
 	
 	public boolean nourrir(Fourmi f) {
-		boolean resultat = false;
+
 		
-		double quantite=this.getQuantiteNourrirture();	
 		if(!(f.getVivant())) {
-			resultat = false;
-		}
+			return false;
 		
-		if (quantite>0 && f.getResteAManger()>0) {
-			if(quantite<=f.getResteAManger()) {
-				f.mange(quantite);
+		if (quantiteNourriture>0 && f.getResteAManger()>0) {
+			
+			if(quantiteNourriture<=f.getResteAManger()) {
+				f.mange(quantiteNourriture);
 				this.setQuantiteNourriture(0);
-				resultat = true;
+				return true;
 			} else {
 				
-				this.setQuantiteNourriture(quantite-f.getResteAManger());
+				this.setQuantiteNourriture(quantiteNourriture-f.getResteAManger());
 				f.mange(f.getResteAManger());
 
-				resultat = true;			
+				return true;			
 			}
+			return false;				
 		}
-		return resultat;	
 	}
 	
 	public void nourrir(){
@@ -103,5 +102,9 @@ public class Fourmiliere {
 		return listeFourmis.contains(f);
 	}
 	
+	public ArrayList<Fourmi> getListe() {
+		
+		return listeFourmis;
+	}
 	
 }
