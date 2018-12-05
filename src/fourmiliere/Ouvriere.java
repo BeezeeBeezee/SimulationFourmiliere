@@ -13,18 +13,17 @@ public class Ouvriere extends Role{
 		int leRandom=(int) (Math.random()*100 + 1);
 		
 		if(leRandom<80) {
-			// chasser();
+			
+			this.adulte.fourmi.setIn(false);
+			
 		}
 		
 		else {
-			//reste
+			this.adulte.fourmi.setIn(true);
 		}
 	
 	}
-	
-
-	
-
+		
 	public String toString() {
 		
 		return "ouvriere";

@@ -129,7 +129,7 @@ public class Fourmi extends Animal {
 	@Override
 	public String toString() {
 		return "Fourmi n°" + id + ": [age=" + age + ", sexe=" + sexe + ", vivant="
-				+ vivant + ", etape=" + etape + "]";
+				+ vivant + ", etape=" + etape + "dedans ="+isIn+"]";
 	}
 
 	public boolean isIn() {
