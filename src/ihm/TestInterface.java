@@ -25,7 +25,7 @@ public class TestInterface {
 	public static void main(String[] args) {
 
 		World jc = new World("Simulation Fourmilière");
-		jc.setBackground(Color.BLACK);
+		jc.setBackground(Color.lightGray);
 		jc.setPreferredSize(new Dimension(800, 600));
 		
 		Dimension dimFourmiliere = new Dimension(100, 100);
@@ -69,8 +69,8 @@ public class TestInterface {
 				iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
 				val++;
 			}
-			jc.add(new Rect(Color.RED, new Point(300, 200), dimFourmiliere));
-			jc.add(new Oval(Color.BLUE, new Point(350, 250), dimReine));
+			jc.add(new Rect(Color.darkGray, new Point(300, 200), dimFourmiliere));
+			jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
 			
 			try {
 				TimeUnit.MILLISECONDS.sleep(500);
