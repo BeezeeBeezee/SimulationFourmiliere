@@ -7,7 +7,7 @@ public class Sexue extends Role{
 	}
 
 	public String toString() {
-		return " ( sexue )";
+		return "[ Sexue ]";
 	}
 	
 	public void travaille() {}
