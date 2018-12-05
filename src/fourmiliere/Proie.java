@@ -1,6 +1,6 @@
 package fourmiliere;
 
-public class Proie {
+public class Proie extends Animal{
 	
 	private double poids;
 	private boolean vivant;

@@ -2,7 +2,7 @@
 
 import java.util.Random;
 
-public class Fourmi {
+public class Fourmi extends Animal {
 	
 	private int id;
 	private int age;
