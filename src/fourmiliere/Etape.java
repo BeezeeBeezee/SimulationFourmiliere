@@ -14,5 +14,4 @@ public abstract class Etape {
 	abstract Etape etatSuivant(int age);
 	abstract boolean isGonnaDie();
 	abstract void step();
-	
 }

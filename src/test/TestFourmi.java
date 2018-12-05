@@ -10,7 +10,7 @@ class TestFourmi {
 
 	@Test
 	void test() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		assert(f.getVivant()==true);
@@ -20,7 +20,7 @@ class TestFourmi {
 	
 	@Test
 	void testIncrementation() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		f.incrementAge();
@@ -30,7 +30,7 @@ class TestFourmi {
 	
 	@Test
 	void testAjoutAge() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		f.ajoutAge(5);
@@ -40,7 +40,7 @@ class TestFourmi {
 	
 	@Test
 	void testEvolution() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		f.incrementAge();
 		f.incrementAge();
 		assert(f.getEtape().getClass().getName() == "fourmiliere.Oeuf");
@@ -51,7 +51,7 @@ class TestFourmi {
 	
 	@Test
 	void testIsGonnaDie() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		f.incrementAge();
 		boolean b = f.isGonnaDie();
 		assert(b == false);

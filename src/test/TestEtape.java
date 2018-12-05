@@ -16,7 +16,7 @@ class TestEtape {
 
 	@Test
 	void test() {
-		Fourmi f = new Fourmi();
+		Fourmi f = new Fourmi(null);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
 		assert(f.getVivant()==true);
@@ -26,32 +26,32 @@ class TestEtape {
 
 	@Test
 	void testAdulte() {	
-		Adulte unAd = new Adulte();
+		Adulte unAd = new Adulte(null);
 		System.out.println("\n" + unAd.getRole());
 		System.out.println(unAd.toString());		
 	}
 	
 	@Test
 	void testOeuf() {	
-		Oeuf unOeuf = new Oeuf();
+		Oeuf unOeuf = new Oeuf(null);
 		System.out.println(unOeuf.toString());		
 	}
 	
 	@Test
 	void testLarve() {	
-		Larve uneLarve = new Larve();
+		Larve uneLarve = new Larve(null);
 		System.out.println(uneLarve.toString());		
 	}
 	
 	@Test
 	void testNymphe() {	
-		Nymphe uneNymphe = new Nymphe();
+		Nymphe uneNymphe = new Nymphe(null);
 		System.out.println(uneNymphe.toString());		
 	}
 	
 	@Test
 	void testMange() {	
-		Adulte unAd = new Adulte();
+		Adulte unAd = new Adulte(null);
 		System.out.println("\nAvant d'avoir mangé : " + unAd.toString());
 		double valeurMangerAvant = unAd.getResteAManger();
 		assertTrue(unAd.mange(0.5));
@@ -61,7 +61,7 @@ class TestEtape {
 	
 	@Test
 	void testVaManger() {	
-		Adulte unAd = new Adulte();
+		Adulte unAd = new Adulte(null);
 		double valeurMangerAvant = unAd.getResteAManger();
 		assertTrue(unAd.mange(0.5));
 		assertTrue((unAd.getResteAManger() + 0.5) == valeurMangerAvant);

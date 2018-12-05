@@ -10,6 +10,7 @@ public class Fourmiliere {
 	private Adulte adulteReine;
 	private Reine roleReine;
 	private ArrayList<Fourmi> listeFourmis;
+	private Depot depot;
 
 	
 	
@@ -23,6 +24,7 @@ public class Fourmiliere {
 		laReine.setEtape(adulteReine);
 		roleReine= new Reine(adulteReine);
 		adulteReine.setRole(roleReine);
+		this.depot = new Depot();
 		
 		
 	}
@@ -35,18 +37,22 @@ public class Fourmiliere {
 		return adulteReine;
 	}
 	
+	public Depot getDepot() {
+		return depot;
+	}
+
 	public Fourmi getlaReine() {
 		return laReine;
 	}
 	
-	public void travaille() {
+	public void step() {
 		
 		laReine.step();
 		
 		for(int i=0;i<=listeFourmis.size()-1;i++) {
-			
-			listeFourmis.get(i).step();
-			
+			if(listeFourmis.get(i).getVivant()) {
+				listeFourmis.get(i).step();
+			}
 		}
 		
 
@@ -125,6 +131,19 @@ public class Fourmiliere {
 	
 	public int indexOfListe(Fourmi f) {
 		return listeFourmis.indexOf(f);
+	}
+	
+	public double pourcentageDeMort() {
+		int nbMort = 0;
+		
+		if(listeFourmis.isEmpty()) return 0;
+		for(Fourmi fourmi :listeFourmis) {
+			if(fourmi.isIn() && fourmi.getVivant()) {
+				nbMort++;
+			}
+		}
+		
+		return nbMort/listeFourmis.size();
 	}
 	
 	

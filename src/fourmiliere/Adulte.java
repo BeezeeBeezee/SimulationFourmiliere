@@ -90,7 +90,6 @@ public class Adulte extends Etape{
 	
 	@Override
 	public void step() {
-		this.role.travaille();
+		this.role.step();
 	}
-	
 }
