@@ -7,10 +7,8 @@ public class Sexue extends Role{
 	}
 
 	public String toString() {
-		return "sexue";
+		return " ( sexue )";
 	}
 	
-	public void travaille() {
-		
-	}
+	public void travaille() {}
 }
