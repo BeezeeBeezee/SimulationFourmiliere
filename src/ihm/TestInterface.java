@@ -36,13 +36,6 @@ public class TestInterface {
 		Fourmiliere laFourmiliere = new Fourmiliere();
 		Terrain leTerrain = new Terrain();	
 		
-		/*Fourmi fourmi1 = new Fourmi();
-		Fourmi fourmi2 = new Fourmi();
-		laFourmiliere.addListe(fourmi1);
-		laFourmiliere.addListe(fourmi2);
-		jc.add(new Oval(Color.BLUE, new Point(fourmi1.getX(), fourmi1.getY()), dimFourmi));
-		jc.add(new Oval(Color.BLUE, new Point(fourmi2.getX(), fourmi2.getY()), dimFourmi));*/
-		
 		for(int i=0; i < 10; i++) {
 			laFourmiliere.pond();
 			jc.add(new Oval(Color.BLUE, new Point(10, 10), dimFourmi));
