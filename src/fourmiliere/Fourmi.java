@@ -9,6 +9,8 @@ public class Fourmi {
 	private boolean sexe;
 	private Boolean vivant;
 	private Etape etape;
+	private int x;
+	private int y;
 	
 	/**
 	 * Creation d'une fourmi
@@ -18,6 +20,8 @@ public class Fourmi {
 		vivant = true;
 		etape = new Oeuf();
 		this.setSexeRandom();
+		this.x = 0;
+		this.y = 0;
 	}
 	
 	public int getId() {
@@ -65,6 +69,22 @@ public class Fourmi {
 
 	public void setEtape(Etape etape) {
 		this.etape = etape;
+	}
+	
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
 	}
 
 	private void setSexeRandom() {
