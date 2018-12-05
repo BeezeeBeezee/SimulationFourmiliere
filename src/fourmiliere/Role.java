@@ -6,8 +6,7 @@ public abstract class Role {
 	
 	Role(Adulte a){
 		
-		adulte=a;
-		
+		adulte=a;		
 	}
 	
 	abstract void travaille();
