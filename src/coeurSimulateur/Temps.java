@@ -52,13 +52,13 @@ public class Temps {
 				}
 
 		
-				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
+				for (int j = 0; j <= laFour.getSize() - 1; j++) {
 					
 					laFour.nourrir();
 					
-					laFour.listeFourmis.get(j).isGonnaDie();
+					laFour.getElement(j).isGonnaDie();
 					
-					stepFourmi(laFour.listeFourmis.get(j));
+					stepFourmi(laFour.getElement(j));
 				}			
 			
 			leTemps++;

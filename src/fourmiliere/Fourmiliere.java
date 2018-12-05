@@ -6,19 +6,16 @@ public class Fourmiliere {
 	
 	
 	private double quantiteNourriture;
-	int age;
-	String nomFourmiliere;
-	Fourmi laReine;
-	Adulte adulteReine;
-	Reine roleReine;
-	public ArrayList<Fourmi> listeFourmis;
+	private Fourmi laReine;
+	private Adulte adulteReine;
+	private Reine roleReine;
+	private ArrayList<Fourmi> listeFourmis;
 
 	
 	
 	public Fourmiliere(){
 		
 		quantiteNourriture=0;
-		age=0;
 		listeFourmis = new ArrayList<Fourmi>();
 
 		laReine= new Fourmi();
@@ -105,9 +102,21 @@ public class Fourmiliere {
 		return listeFourmis.contains(f);
 	}
 	
-	public ArrayList<Fourmi> getListe() {
-		
+	public ArrayList<Fourmi> getListe() {		
 		return listeFourmis;
 	}
+	
+	public int getSize() {
+		return listeFourmis.size();
+	}
+	
+	public Fourmi getElement(int index) {
+		return listeFourmis.get(index);
+	}
+	
+	public int indexOfListe(Fourmi f) {
+		return listeFourmis.indexOf(f);
+	}
+	
 	
 }

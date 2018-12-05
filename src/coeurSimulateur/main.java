@@ -31,10 +31,10 @@ public class main {
 			System.out.println("----------jour"+nbJours+"---------------");
 			System.out.println("quantite bouffe:"+laBouffe);
 			
-			for(int i=0;i<=f.listeFourmis.size()-1;i++) {
+			for(int i=0;i<=f.getSize()-1;i++) {
 				
 				
-				System.out.println(f.listeFourmis.get(i));
+				System.out.println(f.getElement(i));
 				
 
 			} 
