@@ -26,5 +26,15 @@ public class Depot {
 
 	public List<Animal> getLesCadavres() {
 		return this.lesCadavres;
-	}	
+	}
+
+	@Override
+	public String toString() {
+		String res = "[ ";
+		
+		for(Animal a : lesCadavres) {
+			res += a.toString() + " ; ";
+		}
+		return res + "]";
+	}
 }

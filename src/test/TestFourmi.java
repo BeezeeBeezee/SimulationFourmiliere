@@ -33,7 +33,11 @@ class TestFourmi {
 		Fourmi f = new Fourmi(null);
 		System.out.println(f.toString());
 		assert(f.getAge()==0);
-		f.ajoutAge(5);
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
 		System.out.println(f.toString());
 		assert(f.getAge()==5);
 	}
@@ -56,7 +60,11 @@ class TestFourmi {
 		boolean b = f.isGonnaDie();
 		assert(b == false);
 		assert(f.getVivant()==true);
-		f.ajoutAge(5);
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
+		f.incrementAge();
 		b = f.isGonnaDie();
 		assert(b == true);
 		assert(f.getVivant()==false);

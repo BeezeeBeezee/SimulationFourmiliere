@@ -71,7 +71,7 @@ public class Adulte extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Adulte[poids="+this.poids+ " , resteAManger=" + this.resteAManger +", role=" + this.role.toString() + "] ";
+		return "[ Adulte: Poids="+this.poids+ " , ResteAManger=" + this.resteAManger +", Role=" + this.role.toString() + "] ";
 	}
 
 	@Override

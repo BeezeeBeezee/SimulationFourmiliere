@@ -7,7 +7,6 @@ public class Oeuf extends Etape{
 	 **/
 	public Oeuf(Fourmi fourmi) {
 		super();
-		
 		double unPoids = Math.random() * 1 + 0.1;
 		this.poids = (double) Math.round(unPoids * 100) / 100;
 		this.resteAManger = 0;
@@ -18,7 +17,6 @@ public class Oeuf extends Etape{
 	public double getPoids() {
 		return this.poids;
 	}
-
 
 	@Override
 	public double getResteAManger() {
@@ -46,7 +44,7 @@ public class Oeuf extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Oeuf[poids=" + this.poids + " , resteAManger=" + this.resteAManger + "]";
+		return "[ Oeuf: Poids=" + this.poids + " , ResteAManger=" + this.resteAManger + "]";
 	}
 
 	@Override

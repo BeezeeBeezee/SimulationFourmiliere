@@ -45,7 +45,7 @@ public class Nymphe extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Nymphe[poids=" + this.poids + " , resteAManger=" + this.resteAManger + "]";
+		return "[ Nymphe: Poids=" + this.poids + " , ResteAManger=" + this.resteAManger + "]";
 	}
 
 	@Override

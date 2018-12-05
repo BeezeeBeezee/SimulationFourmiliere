@@ -12,17 +12,16 @@ public class Temps {
 
 	public Temps() {
 		leTemps = 0;
-
 	}
 
 	public int lireLeTemps() {
-
+		return leTemps;
+	}
+	
+	public void setTemps() {
 		Scanner leScan = new Scanner(System.in);
 		int leTime = leScan.nextInt();
-
-		return leTemps+leTime;
-
-		
+		leTemps += leTime;
 	}
 
 	/**
@@ -32,13 +31,12 @@ public class Temps {
 	 * @param laFour
 	 */
 	public void stepFourmiliere(Fourmiliere laFour) {
-	
 		laFour.step();
 		laFour.nourrir();			
-		laFour.isGonnaDie();				
+		laFour.isGonnaDie();	
+		System.out.println(laFour.toString());
 		laFour.incrementAge();		
 		leTemps++;
-			
 	}
 
 

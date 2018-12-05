@@ -7,7 +7,6 @@ public class Fourmiliere {
 	
 	private double quantiteNourriture;
 	private Fourmi laReine;
-	private Adulte adulteReine;
 	private Reine roleReine;
 	private ArrayList<Fourmi> listeFourmis;
 	private Depot depot;
@@ -28,10 +27,6 @@ public class Fourmiliere {
 	
 	public Role getRoleReine() {
 		return roleReine;
-	}
-	
-	public Adulte getAdulteReine() {
-		return adulteReine;
 	}
 	
 	public Depot getDepot() {
@@ -106,6 +101,7 @@ public class Fourmiliere {
 		return listeFourmis;
 	}
 	
+	
 	public int getSize() {
 		return listeFourmis.size();
 	}
@@ -145,5 +141,13 @@ public class Fourmiliere {
 			listeFourmis.get(i).incrementAge();
 		}
 	}
-	
+
+	@Override
+	public String toString() {
+		return "FOURMILIERE: "
+				+ "\nQuantite Nourriture: " + quantiteNourriture 
+				+ "\nLa Reine: [" + laReine
+				+ "\n\nFourmis: " + listeFourmis 
+				+ "\n\nDepot : " + depot;
+	}
 }
