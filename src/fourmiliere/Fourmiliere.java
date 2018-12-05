@@ -18,7 +18,7 @@ public class Fourmiliere {
 		quantiteNourriture=0;
 		listeFourmis = new ArrayList<Fourmi>();
 
-		laReine= new Fourmi();
+		laReine= new Fourmi(this);
 		Adulte adulteReine=new Adulte(laReine);
 		laReine.setEtape(adulteReine);
 		roleReine= new Reine(adulteReine);

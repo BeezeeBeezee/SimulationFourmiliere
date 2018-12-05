@@ -14,7 +14,7 @@ public class Reine extends Role{
 	
 	public void pond(Fourmiliere f) {
 		
-		Fourmi laFourmi= new Fourmi();
+		Fourmi laFourmi= new Fourmi(f);
 		f.addListe(laFourmi);
 		laFourmi.setId(f.indexOfListe(laFourmi));	
 
