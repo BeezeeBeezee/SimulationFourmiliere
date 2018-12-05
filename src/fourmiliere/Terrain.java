@@ -1,11 +1,8 @@
 package fourmiliere;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
-import ihm.Morph;
 
 public class Terrain {
 
@@ -31,9 +28,9 @@ public class Terrain {
 		
 		if ((probaDeplacement > 0) && (probaDeplacement < 25)) { //Deplacement à gauche
 			
-			//for (int i = 0; i < lesPheromones.size(); i++) {
-				//if(pos)
-			//}
+			for (int i = 0; i < lesPheromones.size(); i++) {
+				
+			}
 			
 			nouvPos = fourmi.getX() - 1;
 			if (nouvPos < 0) {
