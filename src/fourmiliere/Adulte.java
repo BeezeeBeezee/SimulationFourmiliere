@@ -87,4 +87,10 @@ public class Adulte extends Etape{
 		}
 		return false;
 	}
+	
+	@Override
+	public void step() {
+		this.role.travaille();
+	}
+	
 }

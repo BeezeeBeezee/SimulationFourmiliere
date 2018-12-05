@@ -63,4 +63,7 @@ public class Larve extends Etape{
 		}
 		return false;
 	}
+	
+	void step() {}
+	
 }

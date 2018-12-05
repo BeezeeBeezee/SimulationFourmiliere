@@ -60,4 +60,7 @@ public class Nymphe extends Etape{
 	boolean isGonnaDie() {
 		return false;
 	}
+	
+	public void step(){}
+	
 }

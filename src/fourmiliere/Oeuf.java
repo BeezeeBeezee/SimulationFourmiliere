@@ -62,4 +62,6 @@ public class Oeuf extends Etape{
 		return false;
 	}
 	
+	public void step() {}
+	
 }

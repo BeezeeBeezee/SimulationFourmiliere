@@ -117,6 +117,11 @@ public class Fourmi {
 		this.vivant  = !res;
 		return res;
 	}
+	
+	public void step() {
+		this.etape.step();
+	}
+	
 
 	@Override
 	public String toString() {
