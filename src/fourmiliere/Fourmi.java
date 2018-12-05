@@ -40,8 +40,10 @@ public class Fourmi {
 	 * Vieillissement d'une fourmi d'un jour.
 	 */
 	public void incrementAge() {
-		this.age++;
-		this.evolution();
+		if(this.vivant == true) {
+			this.age++;
+			this.evolution();
+		}
 	}
 	
 	
@@ -51,8 +53,10 @@ public class Fourmi {
 	 * @return true si il y a eu evolution, false sinon
 	 */
 	public void ajoutAge(int nbAgeAjouter) {
-		this.age = this.age + nbAgeAjouter;
-		this.evolution();
+		if(this.vivant == true) {
+			this.age = this.age + nbAgeAjouter;
+			this.evolution();
+		}
 	}
 
 	public boolean getSexe() {

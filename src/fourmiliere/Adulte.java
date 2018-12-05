@@ -76,6 +76,7 @@ public class Adulte extends Etape{
 
 	@Override
 	Etape etatSuivant(int age) {
+		this.vaManger();
 		return this;
 	}
 }

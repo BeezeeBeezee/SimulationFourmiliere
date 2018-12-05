@@ -52,6 +52,7 @@ public class Nymphe extends Etape{
 		if( age > 30) {
 			return new Adulte();
 		}
+		this.vaManger();
 		return this;
 	}
 }

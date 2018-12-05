@@ -52,6 +52,7 @@ public class Larve extends Etape{
 		if( age > 13 ) {
 			return new Nymphe();
 		}
+		this.vaManger();
 		return this;
 	}
 	

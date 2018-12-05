@@ -53,6 +53,7 @@ public class Oeuf extends Etape{
 		if(age > 3) {
 			return new Larve();
 		}
+		this.vaManger();
 		return this;
 	}
 	
