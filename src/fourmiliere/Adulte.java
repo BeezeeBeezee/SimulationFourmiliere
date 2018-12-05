@@ -15,19 +15,18 @@ public class Adulte extends Etape{
 		this.resteAManger = this.poids;
 		
 		double roleFinal = Math.random() * 99 + 1;
-		double roleOuvrier = Math.random() * 70 + 60;
 		double roleSoldat = Math.random() * 25 + 20;
+		double roleSexue = Math.random() * 20 + 5;
 		
-		if (roleFinal > 0 && roleFinal <= roleOuvrier) {
-			this.role = new Ouvriere();
-		}
-		if (roleFinal > roleOuvrier && roleFinal <= roleOuvrier + roleSoldat) {
-			this.role = new Soldat();
-		}
-		if (roleFinal > roleOuvrier + roleSoldat && roleFinal <= 99) {
+		if (roleFinal >= 0 && roleFinal <= roleSexue) { // Sexue
 			this.role = new Sexue();
 		}
-		
+		else if (roleFinal > roleSexue && roleFinal <= roleSexue + roleSoldat) { // Soldat
+			this.role = new Soldat();
+		}
+		else if (roleFinal > roleSexue + roleSoldat && roleFinal <= 100) { // Ouvriere
+			this.role = new Ouvriere();
+		}
 	}
 	
 	public Role getRole() {

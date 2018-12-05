@@ -11,6 +11,7 @@ public class Fourmi {
 	private Etape etape;
 	private int x;
 	private int y;
+	private boolean isIn;
 	
 	/**
 	 * Creation d'une fourmi
@@ -22,6 +23,7 @@ public class Fourmi {
 		this.setSexeRandom();
 		this.x = 0;
 		this.y = 0;
+		this.isIn = true;
 	}
 	
 	public int getId() {
@@ -45,7 +47,6 @@ public class Fourmi {
 			this.evolution();
 		}
 	}
-	
 	
 	/**
 	 * Vieillissement d'une fourmi de nbAgeAjouter.
@@ -109,8 +110,8 @@ public class Fourmi {
 	}
 	
 	/**
-	 * Methode qui verifie si la fourmi doit mourir ou non selon 
-	 * l'etape et le taux de nourriture de la fourmi.
+	 * Methode qui verifie si la fourmi doit mourir et modifie les parametre si c'est le cas.
+	 * @return true si elle meurt, false sinon
 	 */
 	public boolean isGonnaDie() {
 		boolean res = this.etape.isGonnaDie();
@@ -127,5 +128,13 @@ public class Fourmi {
 	public String toString() {
 		return "Fourmi n°" + id + ": [age=" + age + ", sexe=" + sexe + ", vivant="
 				+ vivant + ", etape=" + etape + "]";
+	}
+
+	public boolean isIn() {
+		return isIn;
+	}
+
+	public void setIn(boolean isIn) {
+		this.isIn = isIn;
 	}
 }
