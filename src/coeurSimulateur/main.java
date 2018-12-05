@@ -18,10 +18,12 @@ public class main {
 		
 		Fourmiliere f= new Fourmiliere();
 		
-		f.setQuantiteNourriture(150);
-		double laBouffe=f.getQuantiteNourrirture();
+		f.setQuantiteNourriture(25);
+
 		
 		while(true) {
+
+			double laBouffe=f.getQuantiteNourrirture();
 			
 			test.stepFourmiliere(f);
 			
@@ -35,12 +37,15 @@ public class main {
 				System.out.println(f.listeFourmis.get(i));
 				
 
-			}
+			} 
 			
 			System.out.println();
 			
+			
+			
+			
 			try {
-				TimeUnit.SECONDS.sleep(1);
+				TimeUnit.MILLISECONDS.sleep(500);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -51,6 +56,9 @@ public class main {
 		}
 		
 		
-	}
+	} 
+	
+		
+		
 
 }

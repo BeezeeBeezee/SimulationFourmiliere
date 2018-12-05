@@ -39,7 +39,18 @@ public class Temps {
 		Reine ponte = (Reine) laFour.getRoleReine();
 
 
+				
+				int leRandom=(int) (Math.random()*5 + 1);
+				
+				if(leRandom==2)
 				ponte.pond(laFour);
+				
+				if(leRandom==3) {
+					ponte.pond(laFour);
+					ponte.pond(laFour);
+				
+				}
+
 		
 				for (int j = 0; j <= laFour.listeFourmis.size() - 1; j++) {
 					
@@ -47,7 +58,7 @@ public class Temps {
 					
 					laFour.listeFourmis.get(j).isGonnaDie();
 					
-					stepFourmi(laFour.listeFourmis.get(j),1);
+					stepFourmi(laFour.listeFourmis.get(j));
 				}			
 			
 			leTemps++;
@@ -60,9 +71,10 @@ public class Temps {
 	 * @param f
 	 * @param time
 	 */
-	void stepFourmi(Fourmi f, int time) {
+	void stepFourmi(Fourmi f) {
 
-		f.ajoutAge(time);
+		f.incrementAge();
+		
 		
 	}
 	
