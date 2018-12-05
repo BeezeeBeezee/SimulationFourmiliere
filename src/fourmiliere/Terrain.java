@@ -1,20 +1,28 @@
 package fourmiliere;
 
-import java.util.HashMap;
-import java.util.Map;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ihm.Morph;
 
 public class Terrain {
 
 	private Case[][] lesCases;
 	
-	private Map<Integer, Integer> lesPheromones;
+	private List<Pheromone> lesPheromones;
 	
 	public Terrain() {
-		lesPheromones = new HashMap<Integer, Integer>();
+		lesPheromones = new ArrayList<Pheromone>();
 	}
 	
-	public boolean ajouterPheromone() {
-		return false;
+	public void ajouterPheromone(Pheromone pheromone) {
+		lesPheromones.add(pheromone);
+	}
+	
+	public void supprimerPheromone(Pheromone pheromone) {
+		lesPheromones.remove(pheromone);	
 	}
 	
 	public void seDeplacer(Fourmi fourmi) {
@@ -22,6 +30,11 @@ public class Terrain {
 		int nouvPos;
 		
 		if ((probaDeplacement > 0) && (probaDeplacement < 25)) { //Deplacement à gauche
+			
+			//for (int i = 0; i < lesPheromones.size(); i++) {
+				//if(pos)
+			//}
+			
 			nouvPos = fourmi.getX() - 1;
 			if (nouvPos < 0) {
 				nouvPos = 0;
