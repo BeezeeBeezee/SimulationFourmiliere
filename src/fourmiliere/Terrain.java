@@ -1,11 +1,20 @@
 package fourmiliere;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Terrain {
 
 	private Case[][] lesCases;
 	
+	private Map<Integer, Integer> lesPheromones;
+	
 	public Terrain() {
-		
+		lesPheromones = new HashMap<Integer, Integer>();
+	}
+	
+	public boolean ajouterPheromone() {
+		return false;
 	}
 	
 	public void seDeplacer(Fourmi fourmi) {
