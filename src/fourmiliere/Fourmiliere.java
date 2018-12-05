@@ -45,7 +45,8 @@ public class Fourmiliere {
 	public void step() {
 		laReine.step();
 		
-		for(int i=0;i<=listeFourmis.size()-1;i++) {
+		for(int i=0;i<=listeFourmis.size()-1;i++) {		
+			listeFourmis.get(i).setIn(true);
 			if(listeFourmis.get(i).getVivant()) {
 				listeFourmis.get(i).step();
 			}
