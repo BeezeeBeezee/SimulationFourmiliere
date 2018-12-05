@@ -57,6 +57,9 @@ public class Oeuf extends Etape{
 		return this;
 	}
 	
-	
+	@Override
+	boolean isGonnaDie() {
+		return false;
+	}
 	
 }

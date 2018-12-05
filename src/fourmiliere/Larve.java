@@ -56,5 +56,11 @@ public class Larve extends Etape{
 		return this;
 	}
 	
-	
+	@Override
+	boolean isGonnaDie() {
+		if( this.resteAManger > 0 ) {
+			return true;
+		}
+		return false;
+	}
 }

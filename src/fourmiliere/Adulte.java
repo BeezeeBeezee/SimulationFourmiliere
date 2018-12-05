@@ -79,4 +79,12 @@ public class Adulte extends Etape{
 		this.vaManger();
 		return this;
 	}
+
+	@Override
+	boolean isGonnaDie() {
+		if( this.resteAManger > 0 ) {
+			return true;
+		}
+		return false;
+	}
 }

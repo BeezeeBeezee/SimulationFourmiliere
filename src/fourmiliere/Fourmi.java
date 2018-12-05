@@ -113,15 +113,8 @@ public class Fourmi {
 	 * l'etape et le taux de nourriture de la fourmi.
 	 */
 	public boolean isGonnaDie() {
-		boolean res = false;
-		if(! (this.getEtape().getClass().getName()=="fourmiliere.Oeuf" 
-				&& this.getEtape().getClass().getName()=="fourmiliere.Nymphe") ) {
-			if(this.getEtape().getResteAManger() > 0) {
-				this.vivant = false;
-				res = true;
-			}
-		}
-		
+		boolean res = this.etape.isGonnaDie();
+		this.vivant  = !res;
 		return res;
 	}
 

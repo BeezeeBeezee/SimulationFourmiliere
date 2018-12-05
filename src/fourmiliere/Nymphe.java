@@ -55,4 +55,9 @@ public class Nymphe extends Etape{
 		this.vaManger();
 		return this;
 	}
+	
+	@Override
+	boolean isGonnaDie() {
+		return false;
+	}
 }
