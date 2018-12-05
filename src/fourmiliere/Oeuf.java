@@ -46,7 +46,7 @@ public class Oeuf extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Oeuf[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
+		return "Oeuf[poids=" + this.poids + " , resteAManger=" + this.resteAManger + "]";
 	}
 
 	@Override
@@ -64,5 +64,4 @@ public class Oeuf extends Etape{
 	}
 	
 	public void step() {}
-	
 }

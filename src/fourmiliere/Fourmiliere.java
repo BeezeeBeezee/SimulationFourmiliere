@@ -15,7 +15,6 @@ public class Fourmiliere {
 	
 	
 	public Fourmiliere(){
-		
 		quantiteNourriture=0;
 		listeFourmis = new ArrayList<Fourmi>();
 
@@ -25,8 +24,6 @@ public class Fourmiliere {
 		roleReine= new Reine(adulteReine);
 		adulteReine.setRole(roleReine);
 		this.depot = new Depot();
-		
-		
 	}
 	
 	public Role getRoleReine() {
@@ -46,7 +43,6 @@ public class Fourmiliere {
 	}
 	
 	public void step() {
-		
 		laReine.step();
 		
 		for(int i=0;i<=listeFourmis.size()-1;i++) {
@@ -55,7 +51,6 @@ public class Fourmiliere {
 			}
 		}
 		
-
 	}
 	
 	
@@ -64,44 +59,33 @@ public class Fourmiliere {
 	}
 	
 	public void setQuantiteNourriture(double nouvelleQuantite) {
-		
 		this.quantiteNourriture=nouvelleQuantite;	
 	}
 	
-	
 	public boolean nourrir(Fourmi f) {
 
-		
 		if(!(f.getVivant())) 
 			return false;
 		
 		if (quantiteNourriture>0 && f.getResteAManger()>0) {
-				
 			if(quantiteNourriture<=f.getResteAManger()) {
 					f.mange(quantiteNourriture);
 					this.setQuantiteNourriture(0);
 					return true;
 			} else {
-					
 				this.setQuantiteNourriture(quantiteNourriture-f.getResteAManger());
 				f.mange(f.getResteAManger());
-	
 				return true;			
-			}
-							
+			}			
 		}
-		
 		return false;
 	}
 	
 	
 	public void nourrir(){
-		
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
-			
 			nourrir(this.listeFourmis.get(i));
 		}
-			
 	} 
 	
 		
@@ -133,6 +117,7 @@ public class Fourmiliere {
 		return listeFourmis.indexOf(f);
 	}
 	
+	
 	public double pourcentageDeMort() {
 		int nbMort = 0;
 		
@@ -146,23 +131,18 @@ public class Fourmiliere {
 		return nbMort/listeFourmis.size();
 	}
 	
+	
 	public void isGonnaDie() {
-		
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
-		
 			listeFourmis.get(i).isGonnaDie();
 		}
-			
 	}
+	
 	
 	public void incrementAge() {
-		
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
-			
 			listeFourmis.get(i).incrementAge();
 		}
-		
 	}
-	
 	
 }

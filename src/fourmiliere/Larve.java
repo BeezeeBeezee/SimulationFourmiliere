@@ -45,7 +45,7 @@ public class Larve extends Etape{
 	 **/
 	@Override
 	public String toString() {
-		return "Larve[poids="+this.poids+ " , resteAManger=" + this.resteAManger +"]";
+		return "Larve[poids=" + this.poids + " , resteAManger=" + this.resteAManger + "]";
 	}
 
 	@Override
