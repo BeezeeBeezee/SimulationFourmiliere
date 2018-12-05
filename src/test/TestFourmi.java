@@ -53,10 +53,12 @@ class TestFourmi {
 	void testIsGonnaDie() {
 		Fourmi f = new Fourmi();
 		f.incrementAge();
-		f.isGonnaDie();
+		boolean b = f.isGonnaDie();
+		assert(b == false);
 		assert(f.getVivant()==true);
 		f.ajoutAge(5);
-		f.isGonnaDie();
+		b = f.isGonnaDie();
+		assert(b == true);
 		assert(f.getVivant()==false);
 	}
 
