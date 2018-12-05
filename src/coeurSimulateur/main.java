@@ -18,7 +18,7 @@ public class main {
 		
 		Fourmiliere f= new Fourmiliere();
 		
-		f.setQuantiteNourriture(10000);
+		f.setQuantiteNourriture(1000);
 
 		
 		while(true) {
@@ -45,7 +45,7 @@ public class main {
 			
 			
 			try {
-				TimeUnit.MILLISECONDS.sleep(500);
+				TimeUnit.MILLISECONDS.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

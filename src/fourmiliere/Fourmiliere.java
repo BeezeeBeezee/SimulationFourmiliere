@@ -101,7 +101,7 @@ public class Fourmiliere {
 			
 			nourrir(this.listeFourmis.get(i));
 		}
-				
+			
 	} 
 	
 		
@@ -144,6 +144,24 @@ public class Fourmiliere {
 		}
 		
 		return nbMort/listeFourmis.size();
+	}
+	
+	public void isGonnaDie() {
+		
+		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
+		
+			listeFourmis.get(i).isGonnaDie();
+		}
+			
+	}
+	
+	public void incrementAge() {
+		
+		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
+			
+			listeFourmis.get(i).incrementAge();
+		}
+		
 	}
 	
 	

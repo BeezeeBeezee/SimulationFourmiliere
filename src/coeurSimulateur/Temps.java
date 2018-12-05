@@ -32,52 +32,16 @@ public class Temps {
 	 * @param laFour
 	 */
 	void stepFourmiliere(Fourmiliere laFour) {
-
-		
 	
-				laFour.travaille();
-				
-		/*		int leRandom=(int) (Math.random()*5 + 1);
-				
-				if(leRandom==2)
-					laFour.getlaReine().travaille();
-				
-				if(leRandom==3) {
-					laFour.getlaReine().step();
-					laFour.getlaReine().step();
-				
-				} */
-
-		// faire veillir les fourmis
-				
-				for (int j = 0; j <= laFour.getSize() - 1; j++) {
-					
-					laFour.nourrir();
-					
-					laFour.getElement(j).isGonnaDie();
-					
-					stepFourmi(laFour.getElement(j));
-				}			
+		laFour.step();
+		laFour.nourrir();			
+		laFour.isGonnaDie();				
+		laFour.incrementAge();		
+		leTemps++;
 			
-			leTemps++;
-			
-		}
-
-	/**
-	 * fait grandir une fourmi de x jours
-	 * 
-	 * @param f
-	 * @param time
-	 */
-	void stepFourmi(Fourmi f) {
-
-		f.incrementAge();
-		
-		
 	}
-	
-	
-	
-	
+
+
+		
 
 }
