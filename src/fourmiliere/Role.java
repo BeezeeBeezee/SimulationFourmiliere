@@ -10,12 +10,11 @@ public abstract class Role {
 	}
 	
 	public void step() {
-		if(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 30.0) {
-			
-			while(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 30.0) {
-			
+		if(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 0.30) {
+						
 				this.nettoyage();
-			}
+				
+				// si deerniere fourmi de la liste, nettoyer le reste
 				
 		}else {
 			this.travaille();

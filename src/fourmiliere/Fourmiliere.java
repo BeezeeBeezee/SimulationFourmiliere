@@ -115,7 +115,23 @@ public class Fourmiliere {
 	}
 	
 	
+	
 	public double pourcentageDeMort() {
+		
+		int nbMort=0;
+		
+		for(int i=0;i<=listeFourmis.size()-1;i++) {
+			if (listeFourmis.get(i).isIn()==true && listeFourmis.get(i).getVivant()==false)
+				nbMort++;
+		}
+		
+		if (listeFourmis.size() !=0)
+			return (double)nbMort/listeFourmis.size();
+		
+		else return -1;
+	}
+	
+/*	public double pourcentageDeMort() {
 		int nbMort = 0;
 		
 		if(listeFourmis.isEmpty()) return 0;
@@ -129,7 +145,7 @@ public class Fourmiliere {
 		}
 		return 0;
 	}
-	
+	*/
 	
 	public void isGonnaDie() {
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {

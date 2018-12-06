@@ -21,6 +21,32 @@ class TestOuvriere {
 	void tearDown() throws Exception {
 	}
 
+	
+	
+	@Test 
+	void test30pourcent() {
+		
+		Fourmiliere fourmiliere = new Fourmiliere();
+		
+		for (int i=0; i<= 99 ; i++) {
+			
+			Fourmi fourmi = new Fourmi(fourmiliere);
+			fourmi.setEtape(new Adulte(fourmi));
+
+			if(i<80)
+				fourmi.setVivant(false);
+			
+			fourmiliere.addListe(fourmi);			
+		}
+		
+		assertTrue(fourmiliere.getDepot().getLesCadavres().size()==0);		
+		fourmiliere.step();		
+	//	assertTrue(fourmiliere.getDepot().getLesCadavres().size()==81);
+		System.out.println(fourmiliere.getDepot().getLesCadavres().size());
+		assertTrue(fourmiliere.getQuantiteNourrirture()==0);
+	}
+	
+	
 	/*@Test
 	void test() {
 		Fourmiliere laFourmilliere= new Fourmiliere();

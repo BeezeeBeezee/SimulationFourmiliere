@@ -10,16 +10,17 @@ public class main {
 	
 		Temps temps = new Temps();
 		Fourmiliere f = new Fourmiliere();
-		f.setQuantiteNourriture(1000);
+		f.setQuantiteNourriture(2000);
 
 		
 		while(true) {
 			
 			System.out.println("\n\n----------Jour "+temps.lireLeTemps()+"---------------");
+			//System.out.println(f.toString());
 			temps.stepFourmiliere(f);
 			
 			try {
-				TimeUnit.MILLISECONDS.sleep(500);
+				TimeUnit.MILLISECONDS.sleep(200);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
