@@ -48,6 +48,7 @@ public class TestInterface {
 		
 		while(true) {
 			jc.clear();
+			
 			val = 0;
 			double laBouffe=f.getQuantiteNourrirture();		
 			test.stepFourmiliere(f);

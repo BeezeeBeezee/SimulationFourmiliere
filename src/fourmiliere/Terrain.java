@@ -38,11 +38,51 @@ public class Terrain {
 	 * Méthode qui vérifie les Pheromones afin d'ajuster les pourcentages de direction
 	 **/
 	public void verifierPheromones(Fourmi fourmi) {
+		boolean pheromoneAGauche = false;
+		boolean pheromoneADroite = false;
+		boolean pheromoneEnHaut = false;
+		boolean pheromoneEnBas = false;
 		
-		for (int i = 0; i < lesPheromones.size(); i++) {
+		for(int i = 0; i < lesPheromones.size(); i++) {
+			if((fourmi.getX() < this.lesPheromones.get(i).getX()) && (fourmi.getY() < this.lesPheromones.get(i).getY())){
+				// Fourmi en haut à gauche du pheromone
+				if(fourmi.getX() - this.lesPheromones.get(i).getX() > fourmi.getY() - this.lesPheromones.get(i).getY()) {
+					pheromoneAGauche = true;				
+				} else {
+					pheromoneEnHaut = true;
+				}		
+			}
+			if((fourmi.getX() < this.lesPheromones.get(i).getX()) && (fourmi.getY() > this.lesPheromones.get(i).getY())){
+				// Fourmi en bas à gauche du pheromone
+				if(fourmi.getX() - this.lesPheromones.get(i).getX() > this.lesPheromones.get(i).getY() - fourmi.getY()) {
+					pheromoneAGauche = true;
+				} else {
+					pheromoneEnBas = true;
+				}
+			}
+			if((fourmi.getX() > this.lesPheromones.get(i).getX()) && (fourmi.getY() < this.lesPheromones.get(i).getY())){
+				// Fourmi en haut à droite du pheromone
+				if(this.lesPheromones.get(i).getX() - fourmi.getX() > fourmi.getY() - this.lesPheromones.get(i).getY()) {
+					pheromoneADroite = true;
+				} else {
+					pheromoneEnHaut = true;
+				}
+			}
+			if((fourmi.getX() > this.lesPheromones.get(i).getX()) && (fourmi.getY() > this.lesPheromones.get(i).getY())){
+				// Fourmi en bas à droite du pheromone
+				if(this.lesPheromones.get(i).getX() - fourmi.getX() > this.lesPheromones.get(i).getY() - fourmi.getY()) {
+					pheromoneADroite = true;
+				} else {
+					pheromoneEnBas = true;
+				}
+			}				
+		}
+		
+		if ((pheromoneAGauche == true) && (pheromoneADroite == true) && (pheromoneEnHaut == true) && (pheromoneEnBas == true)) {
 			
 		}
 	}
+
 	
 	/**
 	 * Méthode qui permet à la fourmi de se mouvoir
