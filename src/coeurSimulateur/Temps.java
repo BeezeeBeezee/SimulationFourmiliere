@@ -27,19 +27,14 @@ public class Temps {
 	/**
 	 * permet de demander de combien de jours faire avancer la simulation et de
 	 * faire grandir les fourmis ainsi que de faire pondre un oeuf par jour
-	 * 
 	 * @param laFour
 	 */
 	public void stepFourmiliere(Fourmiliere laFour) {
 		laFour.step();
-		laFour.nourrir();			
+		laFour.nourrir();
 		laFour.isGonnaDie();	
 		System.out.println(laFour.toString());
 		laFour.incrementAge();		
 		leTemps++;
 	}
-
-
-		
-
 }

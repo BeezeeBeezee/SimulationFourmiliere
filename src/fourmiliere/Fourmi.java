@@ -57,6 +57,10 @@ public class Fourmi extends Animal {
 	public boolean getVivant() {
 		return vivant;
 	}
+	
+	public void setVivant(Boolean vivant) {
+		this.vivant = vivant;
+	}
 
 	public Etape getEtape() {
 		return etape; 

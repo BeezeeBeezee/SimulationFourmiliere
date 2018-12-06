@@ -124,8 +124,10 @@ public class Fourmiliere {
 				nbMort++;
 			}
 		}
-		
-		return nbMort/listeFourmis.size();
+		if( listeFourmis.size() != 0 ) {
+			return nbMort/listeFourmis.size();
+		}
+		return 0;
 	}
 	
 	
