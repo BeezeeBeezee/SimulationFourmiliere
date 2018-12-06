@@ -11,9 +11,15 @@ public abstract class Role {
 	
 	public void step() {
 		if(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 30.0) {
-			this.nettoyage();
+			
+			while(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 30.0) {
+			
+				this.nettoyage();
+			}
+				
 		}else {
 			this.travaille();
+			this.nettoyage();
 		}
 	}
 	
@@ -21,7 +27,7 @@ public abstract class Role {
 	
 	public void nettoyage() {
 		
-		for(int i=0; i>this.adulte.fourmi.fourmiliere.getSize(); i++) {
+		for(int i=0; i<this.adulte.fourmi.fourmiliere.getSize(); i++) {
 			Fourmi courant = this.adulte.fourmi.fourmiliere.getElement(i);
 			if (courant.getVivant() == false) {
 				this.adulte.fourmi.fourmiliere.getDepot().ajouterCadavre(courant);

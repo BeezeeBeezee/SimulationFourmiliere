@@ -15,7 +15,7 @@ public class Ouvriere extends Role{
 		if(leRandom<80) {
 			
 			this.adulte.fourmi.setIn(false);
-			this.adulte.fourmi.fourmiliere.setQuantiteNourriture(this.adulte.fourmi.fourmiliere.getQuantiteNourrirture()+ Math.random()* 1 + 50);
+			this.adulte.fourmi.fourmiliere.setQuantiteNourriture(this.adulte.fourmi.fourmiliere.getQuantiteNourrirture()+ Math.random()* 1 + 13);
 			//this.adulte.fourmi.fourmiliere.setQuantiteNourriture(this.adulte.fourmi.fourmiliere.getQuantiteNourrirture()+ 1000);
 			
 		}
