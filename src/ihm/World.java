@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -40,6 +41,7 @@ public class World extends JPanel implements KeyListener {
 				System.exit(0);
 			}
 		};
+		
 		frame.addWindowListener(wa);
 		frame.getContentPane().add(this);
 		frame.pack();
