@@ -25,7 +25,6 @@ public class main {
 				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
 				System.out.println(s);
 				
-			
 				try {
 				TimeUnit.MILLISECONDS.sleep(200);
 			} catch (InterruptedException e) {

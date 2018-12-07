@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.JOptionPane;
 
+import coeurSimulateur.Statistique;
 import coeurSimulateur.Temps;
 import coeurSimulateur.TempsMinutes;
 import fourmiliere.Adulte;
@@ -58,12 +59,13 @@ public class TestInterface {
 		String nombreTemps = questionTemps.showInputDialog(null, "Veuillez indiquer la vitesse de simulation", "Utilisateur", JOptionPane.QUESTION_MESSAGE);
 		reponseTemps.showMessageDialog(null,  "Vous avez choisi d'avoir " + nombreTemps + " en vitesse de simulation", "Utilisateur", JOptionPane.INFORMATION_MESSAGE);
 		
-		//----------------------------------------------
-		int nbJours=0;	
+		//----------------------------------------------	
 		Temps test = new Temps();	
 		Fourmiliere f= new Fourmiliere();	
 		TempsMinutes leTemps= new TempsMinutes();
 		f.setQuantiteNourriture(Integer.parseInt(nombreNourriture));
+		
+		Statistique stat = new Statistique(f);	
 		
 		int val;
 		jc.open();
@@ -71,11 +73,11 @@ public class TestInterface {
 		while(true) {
 			jc.clear();
 			
-			val = 0;
-			double laBouffe=f.getQuantiteNourrirture();		
+			stat.calculDesStatistique();
+			val = 0;	
 			leTemps.incrementeMinute(f);
 			String s=leTemps.incrementeMinute(f);
-			
+				
 				
 				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
 				System.out.println(s);
@@ -111,7 +113,21 @@ public class TestInterface {
 				}
 				
 				jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
-				jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
+				jc.add(new Oval(Color.GRAY, new Point(350, 220), dimReine));
+				
+				jc.add(new DrawString(Color.BLACK, new Point(500, 100), dimReine, "AFFICHAGE DES INFORMATIONS :"));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 120), dimReine, "Quantite de nourriture restante : " + f.getQuantiteNourrirture()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 140), dimReine, "Nombre d'oeufs : " + stat.getNbOeufs()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 160), dimReine, "Nombre de larves : " + stat.getNbLarves()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 180), dimReine, "Nombre de nymphes : " + stat.getNbNymphes()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 200), dimReine, "Nombre d'ouvriers : " + stat.getNbOuvriere()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 220), dimReine, "Nombre de soldats : " + stat.getNbSoldat()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 240), dimReine, "Nombre de sexués : " + stat.getNbSexue()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 260), dimReine, "Nombre de morts : " + stat.getNbMort()));
+				
+				jc.add(new DrawString(Color.RED, new Point(500, 300), dimReine, "Fourmis soldats en rouge"));
+				jc.add(new DrawString(Color.BLUE, new Point(500, 320), dimReine, "Fourmis ouvrière en bleu"));
+				jc.add(new DrawString(Color.PINK, new Point(500, 340), dimReine, "Fourmis sexuées en rose"));
 				
 				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
 				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
