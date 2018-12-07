@@ -29,12 +29,14 @@ public class Temps {
 	 * faire grandir les fourmis ainsi que de faire pondre un oeuf par jour
 	 * @param laFour
 	 */
-	public void stepFourmiliere(Fourmiliere laFour) {
+	public String stepFourmiliere(Fourmiliere laFour) {
 		laFour.step();
 		laFour.nourrir();
-		laFour.isGonnaDie();	
-		System.out.println(laFour.toString());
+		laFour.isGonnaDie();
+		String image=laFour.toString();
 		laFour.incrementAge();		
 		leTemps++;
+		
+		return image;
 	}
 }

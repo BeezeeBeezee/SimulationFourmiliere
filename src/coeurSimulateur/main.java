@@ -17,7 +17,7 @@ public class main {
 			
 			System.out.println("\n\n----------Jour "+temps.lireLeTemps()+"---------------");
 			//System.out.println(f.toString());
-			temps.stepFourmiliere(f);
+			System.out.println(temps.stepFourmiliere(f));
 			
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);
