@@ -31,7 +31,7 @@ public class TestInterface {
 	public static void main(String[] args) {
 
 		World jc = new World("Simulation Fourmilière");
-		jc.setBackground(Color.lightGray);
+		jc.setBackground(Color.WHITE);
 		jc.setPreferredSize(new Dimension(800, 600));
 		
 		Dimension dimFourmiliere = new Dimension(100, 100);
@@ -67,6 +67,11 @@ public class TestInterface {
 		
 		Statistique stat = new Statistique(f);	
 		
+		
+		for(int i=1; i<=29;i++) {
+			f.temps.stepFourmiliere(f);
+		}
+		
 		int val;
 		jc.open();
 		
@@ -75,6 +80,8 @@ public class TestInterface {
 			
 			stat.calculDesStatistique();
 			val = 0;	
+			
+			
 			leTemps.incrementeMinute(f);
 			String s=leTemps.incrementeMinute(f);
 				
@@ -114,8 +121,9 @@ public class TestInterface {
 				
 				jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
 				jc.add(new Oval(Color.GRAY, new Point(350, 220), dimReine));
-				
-				jc.add(new DrawString(Color.BLACK, new Point(500, 100), dimReine, "AFFICHAGE DES INFORMATIONS :"));
+
+				jc.add(new DrawString(Color.BLACK, new Point(500, 80), dimReine, "AFFICHAGE DES INFORMATIONS :"));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 100), dimReine, "Nombre de jours : " + f.temps.lireLeTemps() ));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 120), dimReine, "Quantite de nourriture restante : " + f.getQuantiteNourrirture()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 140), dimReine, "Nombre d'oeufs : " + stat.getNbOeufs()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 160), dimReine, "Nombre de larves : " + stat.getNbLarves()));

@@ -14,12 +14,11 @@ public class Terrain {
 	private int nombrePheromonesCote;
 	
 	public Terrain() {
-		lesPheromones = new ArrayList<Pheromone>();
+		lesPheromones = new ArrayList<Pheromone>(); // Liste de tous les phéromones présents sur le Terrain
 		this.pourcentageGauche = 25;
 		this.pourcentageDroite = 25;
 		this.pourcentageHaut = 25;
-		this.pourcentageBas = 25;
-		
+		this.pourcentageBas = 25;	
 		this.nombrePheromonesCote = 0;
 	}
 	
@@ -91,6 +90,7 @@ public class Terrain {
 			}				
 		}
 		
+		// S'il n'y a qu'un seul Pheromone présent dans la collection
 		if(nombrePheromonesCote == 1) {
 			this.pourcentageGauche = 20;
 			this.pourcentageDroite = 20;
@@ -110,6 +110,8 @@ public class Terrain {
 				this.pourcentageBas = 40;
 			}
 		}
+		
+		// S'il n'y a que deux phéromones ou que les deux indiquent la même direction
 		else if(nombrePheromonesCote == 2) {
 			this.pourcentageGauche = 15;
 			this.pourcentageDroite = 15;
@@ -130,6 +132,7 @@ public class Terrain {
 			}
 		}
 		
+		// S'il y  a trois Pheromones pointant vers trois directions différentes
 		else if(nombrePheromonesCote == 3) {
 			this.pourcentageGauche = 10;
 			this.pourcentageDroite = 10;
@@ -149,7 +152,7 @@ public class Terrain {
 				this.pourcentageBas = 30;
 			}
 		}
-		
+		// Si il y a 4 Pheromones qui pointent vers les 4 directions différentes, les pourcentages ne sont pas modifiés
 	}
 
 	
