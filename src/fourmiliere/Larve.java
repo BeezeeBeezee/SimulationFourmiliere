@@ -25,7 +25,7 @@ public class Larve extends Etape{
 	}
 
 	/**
-	 * Méthode qui fait manger la larve
+	 * Methode qui fait manger la larve
 	 **/
 	@Override
 	public boolean mange(double aEteMange) {
@@ -41,14 +41,15 @@ public class Larve extends Etape{
 		this.resteAManger = this.poids;
 	}
 	 
-	/**
-	 * Méthode qui affiche les variables
-	 **/
 	@Override
 	public String toString() {
 		return "[Larve: Poids=" + this.poids + " , ResteAManger=" + this.resteAManger + "]";
 	}
 
+	/**
+	 * Si la larve est plus vieille de 13 jours, on renvoie une nouvelle Nymphe
+	 * sinon reinitialisation de la larve pour une nouvelle journée
+	 */
 	@Override
 	Etape etatSuivant(int age) {
 		if( age > 13 ) {
@@ -58,6 +59,9 @@ public class Larve extends Etape{
 		return this;
 	}
 	
+	/**
+	 * Si la larve ne mange pas assez, elle meurt
+	 */
 	@Override
 	boolean isGonnaDie() {
 		if( this.resteAManger > 0 ) {

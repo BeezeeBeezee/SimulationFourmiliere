@@ -19,7 +19,9 @@ public class Fourmiliere {
 	
 
 	
-	
+	/**
+	 * Constructeur de la fourmiliere
+	 */
 	public Fourmiliere(){
 		quantiteNourriture=0;
 		listeFourmis = new ArrayList<Fourmi>();
@@ -70,9 +72,9 @@ public class Fourmiliere {
 	}
 	
 	/**
-	 * La méthode permet de nourrir un fourmi :
+	 * La méthode permet de nourrir une fourmi :
 	 * - si elle est encore vivante
-	 * - si elle doit encore mangé
+	 * - si elle doit encore mangée
 	 * - si il reste de la nourriture dans la fourmiliere
 	 * @param f la fourmi à nourrir
 	 * @return true si elle a mange, false sinon
@@ -97,7 +99,7 @@ public class Fourmiliere {
 	}
 	
 	/**
-	 * Appel de la fonction nourrir pour chaque fourmis présent dans la liste
+	 * Appel de la fonction nourrir pour chaque fourmi présente dans la liste
 	 */
 	public void nourrir(){
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
@@ -107,8 +109,8 @@ public class Fourmiliere {
 	
 	/**
 	 * Ajout d'une fourmi dans la liste.
-	 * @param f la fourmi a ajoutée
-	 * @return true si ajouté, false sinon
+	 * @param f la fourmi a ajouter
+	 * @return true si ajoutée, false sinon
 	 */
 	public boolean addListe(Fourmi f) {
 		return listeFourmis.add(f);
@@ -117,7 +119,7 @@ public class Fourmiliere {
 	/**
 	 * Suppresion d'une fourmi dans la liste.
 	 * @param f la fourmi à supprimer
-	 * @return true si supprimer, false sinon
+	 * @return true si supprimée, false sinon
 	 */
 	public boolean remove(Fourmi f) {
 		return listeFourmis.remove(f);
@@ -146,8 +148,8 @@ public class Fourmiliere {
 	
 	
 	/**
-	 * Calcul du pourcentage totale de fourmi mort présent dans la fourmiliere
-	 * @return -1 si le calcul n'est pas possible, le pourcentage calculée sinon
+	 * Calcul du pourcentage totale de fourmis mortes présentes dans la fourmiliere
+	 * @return -1 si le calcul n'est pas possible, le pourcentage calculé sinon
 	 */
 	public double pourcentageDeMort() {
 		
@@ -176,7 +178,7 @@ public class Fourmiliere {
 	
 	/**
 	 * Appel de la fonction incrementAge() pour chaque fourmi
-	 * présent dans la liste.
+	 * présente dans la liste.
 	 */
 	public void incrementAge() {
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {

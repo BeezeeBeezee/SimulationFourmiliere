@@ -101,7 +101,7 @@ public class Fourmi extends Animal {
 	
 	/**
 	 * Appel de la fonction mange (selon l'etape de la fourmi).
-	 * @param aEteMange La quantité de nourriture que doit mangé la fourmi
+	 * @param aEteMange La quantité de nourriture que doit manger la fourmi
 	 * @return true si il mange, false sinon.
 	 */
 	public boolean mange(double aEteMange) {

@@ -26,7 +26,7 @@ public class Oeuf extends Etape{
 	}
 
 	/**
-	 * Methode qui previens que l'oeuf ne mange pas.
+	 * Methode qui previent que l'oeuf ne mange pas.
 	 **/
 	@Override
 	public boolean mange(double aEteMange) {
@@ -44,7 +44,7 @@ public class Oeuf extends Etape{
 
 	/**
 	 * Methode qui renvoie l'etat suivant si l'oeuf est plus vieux que 3 jours
-	 * sinon return this
+	 * sinon retourne this
 	 */
 	@Override
 	Etape etatSuivant(int age) {

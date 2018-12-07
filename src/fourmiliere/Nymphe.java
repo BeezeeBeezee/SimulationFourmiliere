@@ -24,7 +24,7 @@ public class Nymphe extends Etape{
 	}
 
 	/**
-	 * Méthode qui fait manger la nymphe
+	 * Méthode qui permet a la nymphe de manger
 	 **/
 	@Override
 	boolean mange(double aEteMange) {
@@ -32,32 +32,30 @@ public class Nymphe extends Etape{
 		return this.resteAManger > 0;	
 	}
 
-	/**
-	 * Méthode qui remet à zéro la faim de la nymphe
-	 **/
 	@Override
 	void vaManger() {
-		this.resteAManger = 0;
 	}
 	
-	
-	/**
-	 * Méthode qui affiche les variables
-	 **/
 	@Override
 	public String toString() {
 		return "[ Nymphe: Poids=" + this.poids + " , ResteAManger=" + this.resteAManger + "]";
 	}
 
+	/**
+	 * Methode qui renvoie un Adulte si la Nymphe est plus agée de 30 jours
+	 * sinon renvoie la Nymphe
+	 */
 	@Override
 	Etape etatSuivant(int age) {
 		if( age > 30 ) {
 			return new Adulte(this.fourmi);
 		}
-		this.vaManger();
 		return this;
 	}
 	
+	/**
+	 * La Nymphe ne peut pas mourrir
+	 */
 	@Override
 	boolean isGonnaDie() {
 		return false;

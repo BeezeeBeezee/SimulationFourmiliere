@@ -7,6 +7,9 @@ public class Depot {
 
 	private List<Animal> lesCadavres; // Liste des fourmis et proies mortes
 	
+	/**
+	 * Constructeur de l'Etape
+	 */
 	public Depot() {	
 		this.lesCadavres = new ArrayList<Animal>();
 	}
