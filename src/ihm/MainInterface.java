@@ -26,24 +26,32 @@ import fourmiliere.Pheromone;
 import fourmiliere.Proie;
 import fourmiliere.Terrain;
 
-public class TestInterface {
+public class MainInterface {
 
 	public static void main(String[] args) {
 
+		// CREATION DU MONDE
 		World jc = new World("Simulation Fourmilière");
 		jc.setBackground(Color.WHITE);
 		jc.setPreferredSize(new Dimension(800, 600));
 		
+		// CREATION DES 4 TYPES DE DIMENSION
 		Dimension dimFourmiliere = new Dimension(100, 100);
 		Dimension dimReine = new Dimension(20, 20);
 		Dimension dimFourmi = new Dimension(5, 5);
 		Dimension dimPheromone = new Dimension(10, 10);
 
-		// GESTION DE LA FOURMILIERE
+		// CREATION DE LA FOURMILIERE
 		Terrain leTerrain = new Terrain();	
 		Proie proie1 = new Proie(10, 10);
 		Proie proie2 = new Proie(500, 500);
+
+		Temps test = new Temps();	
+		Fourmiliere f= new Fourmiliere();	
+		TempsMinutes leTemps= new TempsMinutes();
+		Statistique stat = new Statistique(f);	
 		
+		// Ajout des Phéromones
 		Pheromone pheromone1 = new Pheromone(10, 10);
 		Pheromone pheromone2 = new Pheromone(500, 500); 
 		
@@ -59,15 +67,10 @@ public class TestInterface {
 		String nombreTemps = questionTemps.showInputDialog(null, "Veuillez indiquer la vitesse de simulation", "Utilisateur", JOptionPane.QUESTION_MESSAGE);
 		reponseTemps.showMessageDialog(null,  "Vous avez choisi d'avoir " + nombreTemps + " en vitesse de simulation", "Utilisateur", JOptionPane.INFORMATION_MESSAGE);
 		
-		//----------------------------------------------	
-		Temps test = new Temps();	
-		Fourmiliere f= new Fourmiliere();	
-		TempsMinutes leTemps= new TempsMinutes();
+				
 		f.setQuantiteNourriture(Integer.parseInt(nombreNourriture));
-		
-		Statistique stat = new Statistique(f);	
-		
-		
+			
+		// On fait passer les 30 premiers jours en accéléré
 		for(int i=1; i<=29;i++) {
 			f.temps.stepFourmiliere(f);
 		}
@@ -75,24 +78,27 @@ public class TestInterface {
 		int val;
 		jc.open();
 		
+		// DEBUT DU TRAITEMENT
 		while(true) {
-			jc.clear();
+			jc.clear(); // On écrase l'affichage précédent
 			
-			stat.calculDesStatistique();
+			stat.calculDesStatistique(); // Calcul avant d'afficher les statistiques 
 			val = 0;	
 			
 			
-			leTemps.incrementeMinute(f);
+			leTemps.incrementeMinute(f); // Le temps passe
 			String s=leTemps.incrementeMinute(f);
 				
+				// Affichage du temps et des fourmis
+				//System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
+				//System.out.println(s);
 				
-				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
-				System.out.println(s);
 				
-				for(int i=0;i < f.getSize(); i++) {					
+				/*for(int i=0;i < f.getSize(); i++) {					
 					System.out.println(f.getElement(i));
-				} 
+				}*/ 
 				
+				// On ajoute dans la liste des éléments graphiques les points représentant les fourmis
 				for(int i=0; i < f.getSize(); i++) {
 					if((f.getListe().get(i).getEtape().identificateur == 4) || (f.getListe().get(i).getEtape().identificateur == 5) || (f.getListe().get(i).getEtape().identificateur == 6)) {
 						leTerrain.seDeplacer(f.getListe().get(i));
@@ -109,6 +115,7 @@ public class TestInterface {
 					}
 				}		
 				
+				// Affichage des fourmis (graphiquement)
 				List<Morph> drawables = jc.contents();
 				for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
 					if(f.getListe().get(val).isIn() == true) {
@@ -119,9 +126,11 @@ public class TestInterface {
 					val++;
 				}
 				
-				jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
+				// Affichage de la fourmilière et de la reine
+				jc.add(new Rect(Color.darkGray, new Point(300, 200), dimFourmiliere));
 				jc.add(new Oval(Color.GRAY, new Point(350, 220), dimReine));
 
+				// Affichage des statistiques
 				jc.add(new DrawString(Color.BLACK, new Point(500, 80), dimReine, "AFFICHAGE DES INFORMATIONS :"));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 100), dimReine, "Nombre de jours : " + f.temps.lireLeTemps() ));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 120), dimReine, "Quantite de nourriture restante : " + f.getQuantiteNourrirture()));
@@ -134,11 +143,12 @@ public class TestInterface {
 				jc.add(new DrawString(Color.BLACK, new Point(500, 260), dimReine, "Nombre de morts : " + stat.getNbMort()));
 				
 				jc.add(new DrawString(Color.RED, new Point(500, 300), dimReine, "Fourmis soldats en rouge"));
-				jc.add(new DrawString(Color.BLUE, new Point(500, 320), dimReine, "Fourmis ouvrière en bleu"));
+				jc.add(new DrawString(Color.BLUE, new Point(500, 320), dimReine, "Fourmis ouvrières en bleu"));
 				jc.add(new DrawString(Color.PINK, new Point(500, 340), dimReine, "Fourmis sexuées en rose"));
 				
 				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
 				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
+				
 				
 				try {
 					TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
@@ -146,7 +156,7 @@ public class TestInterface {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-						
+				
 
 		}		
 	}	

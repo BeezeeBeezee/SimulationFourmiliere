@@ -12,10 +12,13 @@ public class Rect extends Morph {
 		
 	}
 	
+	/**
+	 * Création d'un dessin rectange non rempli
+	 */
 	public void draw(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(color);
-		g.fillRect(bounds.x,bounds.y,bounds.height,bounds.width);
+		g.drawRect(bounds.x,bounds.y,bounds.height,bounds.width);
 		g.setColor(c);
 		super.draw(g);
 	}

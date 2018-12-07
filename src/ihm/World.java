@@ -33,7 +33,9 @@ public class World extends JPanel implements KeyListener {
 		return drawables;
 	}
 
-	
+	/**
+	 *  Instanciation du monde pour dessiner avec la fenetre graphique
+	 */
 	public void open() {
 		JFrame frame = new JFrame(name);
 		WindowAdapter wa = new WindowAdapter() {

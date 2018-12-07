@@ -11,7 +11,6 @@ public class Terrain {
 	private int pourcentageDroite;
 	private int pourcentageHaut;
 	private int pourcentageBas;
-	private int nombrePheromonesCote;
 	
 	public Terrain() {
 		lesPheromones = new ArrayList<Pheromone>(); // Liste de tous les phéromones présents sur le Terrain
@@ -19,7 +18,6 @@ public class Terrain {
 		this.pourcentageDroite = 25;
 		this.pourcentageHaut = 25;
 		this.pourcentageBas = 25;	
-		this.nombrePheromonesCote = 0;
 	}
 	
 	/**
@@ -45,7 +43,7 @@ public class Terrain {
 		boolean pheromoneEnHaut = false;
 		boolean pheromoneEnBas = false;
 		
-		nombrePheromonesCote = 0;
+		int nombrePheromonesCote = 0;
 		
 		for(int i = 0; i < lesPheromones.size(); i++) {
 			if((fourmi.getX() < this.lesPheromones.get(i).getX()) && (fourmi.getY() < this.lesPheromones.get(i).getY())){
@@ -222,10 +220,4 @@ public class Terrain {
 		return pourcentageBas;
 	}
 
-	public int getNombrePheromonesCote() {
-		return nombrePheromonesCote;
-	}
-	
-	
-	
 }

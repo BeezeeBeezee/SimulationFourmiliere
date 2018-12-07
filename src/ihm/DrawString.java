@@ -16,7 +16,9 @@ public class DrawString extends Morph {
 		this.message = message;
 	}
 
-	
+	/**
+	 * Création d'une chaine de caractère à écrire sur le dessin
+	 */
 	public void draw(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(color);

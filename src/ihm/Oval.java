@@ -17,7 +17,9 @@ public class Oval extends Morph {
 		
 	}
 
-	
+	/**
+	 * Création d'un dessin oval rempli
+	 */
 	public void draw(Graphics g) {
 		Color c = g.getColor();
 		g.setColor(color);

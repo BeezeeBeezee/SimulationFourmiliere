@@ -30,6 +30,10 @@ public abstract class Morph {
 			world.repaint();		
 	}
 	
+	/**
+	 * On crée l'espace de dessin
+	 * @param g
+	 */
 	public void draw(Graphics g) {
 		Iterator<Morph> itor = submorphs.iterator();
 		while (itor.hasNext()) {
