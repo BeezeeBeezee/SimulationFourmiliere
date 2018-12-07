@@ -51,7 +51,7 @@ public class Adulte extends Etape{
 	}
 
 	/**
-	 * Méthode qui fait manger l'adulte
+	 * Méthode qui permet de faire manger l'adulte
 	 **/
 	@Override
 	public boolean mange(double aEteMange) {
@@ -67,20 +67,23 @@ public class Adulte extends Etape{
 		this.resteAManger = this.poids;
 	}
 
-	/**
-	 * Méthode qui affiche les variables
-	 **/
 	@Override
 	public String toString() {
 		return "[ Adulte: Poids="+this.poids+ " , ResteAManger=" + this.resteAManger +", Role=" + this.role.toString() + "] ";
 	}
 
+	/**
+	 * renvoie l'adulte reinitialise
+	 */
 	@Override
 	Etape etatSuivant(int age) {
 		this.vaManger();
 		return this;
 	}
 
+	/**
+	 * Methode qui permet de tuer une fourmi si elle n'a pas assez mange
+	 */
 	@Override
 	boolean isGonnaDie() {
 		if( this.resteAManger > 0 ) {
@@ -89,6 +92,9 @@ public class Adulte extends Etape{
 		return false;
 	}
 	
+	/**
+	 * Appel de la methode step selon le Role de la fourmi
+	 */
 	@Override
 	public void step() {
 		this.role.step();

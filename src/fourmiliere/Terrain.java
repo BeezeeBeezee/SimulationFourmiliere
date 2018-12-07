@@ -12,6 +12,9 @@ public class Terrain {
 	private int pourcentageHaut;
 	private int pourcentageBas;
 	
+	/**
+	 * Constructeur du terrain
+	 */
 	public Terrain() {
 		lesPheromones = new ArrayList<Pheromone>(); // Liste de tous les phéromones présents sur le Terrain
 		this.pourcentageGauche = 25;

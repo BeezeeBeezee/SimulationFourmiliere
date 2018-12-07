@@ -6,6 +6,9 @@ public class StockNourriture {
 	private ArrayList<Proie> stock;
 	private double grammeNourriture;
 	
+	/**
+	 * Constructeur du StockNourriture
+	 */
 	public StockNourriture() {
 		this.stock = new ArrayList<Proie>();
 		this.grammeNourriture = 0.0;
@@ -42,6 +45,9 @@ public class StockNourriture {
 		return this.stock.get(index);
 	}
 	
+	/**
+	 * Calcul du total des poids des Proies stocker en tant que nourriture.
+	 */
 	public void calculerPoidsNourritureGeneral() {
 		for(Proie p : stock) {
 			this.grammeNourriture += p.getPoids();
