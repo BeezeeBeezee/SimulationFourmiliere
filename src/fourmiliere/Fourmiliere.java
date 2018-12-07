@@ -10,7 +10,6 @@ public class Fourmiliere {
 	
 	private double quantiteNourriture;
 	private Fourmi laReine;
-	private Reine roleReine;
 	private ArrayList<Fourmi> listeFourmis;
 	private Depot depot;
 	public Temps temps;
@@ -25,16 +24,12 @@ public class Fourmiliere {
 		laReine= new Fourmi(this);
 		Adulte adulteReine=new Adulte(laReine);
 		laReine.setEtape(adulteReine);
-		roleReine= new Reine(adulteReine);
-		adulteReine.setRole(roleReine);
 		this.depot = new Depot();
 		this.temps = new Temps();
 		this.minutes = new TempsMinutes();
 	}
 	
-	public Role getRoleReine() {
-		return roleReine;
-	}
+
 	
 	public Depot getDepot() {
 		return depot;
