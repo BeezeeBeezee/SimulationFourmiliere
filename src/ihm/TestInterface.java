@@ -33,7 +33,7 @@ public class TestInterface {
 		jc.setPreferredSize(new Dimension(800, 600));
 		
 		Dimension dimFourmiliere = new Dimension(100, 100);
-		Dimension dimReine = new Dimension(30, 30);
+		Dimension dimReine = new Dimension(20, 20);
 		Dimension dimFourmi = new Dimension(15, 15);
 
 		// GESTION DE LA FOURMILIERE
@@ -62,7 +62,6 @@ public class TestInterface {
 		Fourmiliere f= new Fourmiliere();	
 		f.setQuantiteNourriture(Integer.parseInt(nombreNourriture));
 
-		
 		int val;
 		jc.open();
 		
@@ -90,14 +89,12 @@ public class TestInterface {
 				iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
 				val++;
 			}
-			jc.add(new Rect(Color.darkGray, new Point(300, 200), dimFourmiliere));
-			jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
 			
+			jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
+			jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
 			
 			jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimReine));
 			jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimReine));
-			System.out.println("Pourcentage gauche : " + leTerrain.getPourcentageGauche() + "\n" + "Pourcentage droite : " + leTerrain.getPourcentageDroite());
-			System.out.println("Pourcentage haut : " + leTerrain.getPourcentageHaut() + "\n" + "Pourcentage bas : " + leTerrain.getPourcentageBas());
 			
 			try {
 				TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
@@ -108,7 +105,7 @@ public class TestInterface {
 					
 			nbJours++;
 		}
-			//----------------------------------------------------	
+				
 	}	
 
 }
