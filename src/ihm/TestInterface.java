@@ -34,7 +34,8 @@ public class TestInterface {
 		
 		Dimension dimFourmiliere = new Dimension(100, 100);
 		Dimension dimReine = new Dimension(20, 20);
-		Dimension dimFourmi = new Dimension(15, 15);
+		Dimension dimFourmi = new Dimension(5, 5);
+		Dimension dimPheromone = new Dimension(10, 10);
 
 		// GESTION DE LA FOURMILIERE
 		Terrain leTerrain = new Terrain();	
@@ -42,7 +43,7 @@ public class TestInterface {
 		Proie proie2 = new Proie(500, 500);
 		
 		Pheromone pheromone1 = new Pheromone(10, 10);
-		Pheromone pheromone2 = new Pheromone(500, 500);
+		Pheromone pheromone2 = new Pheromone(500, 500); 
 		
 		leTerrain.ajouterPheromone(pheromone1);
 		leTerrain.ajouterPheromone(pheromone2);
@@ -61,7 +62,7 @@ public class TestInterface {
 		Temps test = new Temps();	
 		Fourmiliere f= new Fourmiliere();	
 		f.setQuantiteNourriture(Integer.parseInt(nombreNourriture));
-
+		
 		int val;
 		jc.open();
 		
@@ -80,21 +81,36 @@ public class TestInterface {
 			} 
 			
 			for(int i=0; i < f.getSize(); i++) {
-				leTerrain.seDeplacer(f.getListe().get(i));
-				jc.add(new Oval(Color.WHITE, new Point(10, 10), dimFourmi));
+				if((f.getListe().get(i).getEtape().identificateur == 4) || (f.getListe().get(i).getEtape().identificateur == 5) || (f.getListe().get(i).getEtape().identificateur == 6)) {
+					leTerrain.seDeplacer(f.getListe().get(i));
+					
+					if(f.getListe().get(i).getEtape().identificateur == 4) {
+						jc.add(new Oval(Color.BLUE, new Point(350, 250), dimFourmi));
+					}
+					if(f.getListe().get(i).getEtape().identificateur == 5) {
+						jc.add(new Oval(Color.RED, new Point(350, 250), dimFourmi));
+					}
+					if(f.getListe().get(i).getEtape().identificateur == 6) {
+						jc.add(new Oval(Color.PINK, new Point(350, 250), dimFourmi));
+					}
+				}
 			}		
 			
 			List<Morph> drawables = jc.contents();
-			for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {
-				iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
+			for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
+				//if(f.getListe().get(val).isIn() == true) {
+					//iter.next().setPosition(new Point(350, 250));
+				//} else {
+					iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
+				//}
 				val++;
 			}
 			
 			jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
 			jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
 			
-			jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimReine));
-			jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimReine));
+			jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
+			jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
 			
 			try {
 				TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
