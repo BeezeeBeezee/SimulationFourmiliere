@@ -41,7 +41,8 @@ public class Fourmi extends Animal {
 	}
 
 	/**
-	 * Vieillissement d'une fourmi d'un jour.
+	 * Incrementation de l'age de la fourmi.
+	 * La fourmi viellit d'un jour.
 	 */
 	public void incrementAge() {
 		if(this.vivant == true) {
@@ -86,6 +87,9 @@ public class Fourmi extends Animal {
 		this.y = y;
 	}
 
+	/**
+	 * Fonction qui donne le sexe de la fourmi de façon Random.
+	 */
 	private void setSexeRandom() {
 		Random random = new Random();
 		this.sexe = random.nextBoolean();
@@ -95,16 +99,25 @@ public class Fourmi extends Animal {
 		return etape.getResteAManger();
 	}
 	
+	/**
+	 * Appel de la fonction mange (selon l'etape de la fourmi).
+	 * @param aEteMange La quantité de nourriture que doit mangé la fourmi
+	 * @return true si il mange, false sinon.
+	 */
 	public boolean mange(double aEteMange) {
 		return etape.mange(aEteMange); 
 	}
 
+	/**
+	 * Appel de la fonction evolution selon l'etape de la fourmi.
+	 */
 	private void evolution() {
 		this.etape = etape.etatSuivant(this.age);
 	}
 	
 	/**
-	 * Methode qui verifie si la fourmi doit mourir et modifie les parametre si c'est le cas.
+	 * Methode qui verifie si la fourmi doit mourir,
+	 * modification de ses parametres si c'est le cas.
 	 * @return true si elle meurt, false sinon
 	 */
 	public boolean isGonnaDie() {
@@ -113,6 +126,9 @@ public class Fourmi extends Animal {
 		return res;
 	}
 	
+	/**
+	 * Appel de la fonction step() de l'étape
+	 */
 	public void step() {
 		this.etape.step();
 	}

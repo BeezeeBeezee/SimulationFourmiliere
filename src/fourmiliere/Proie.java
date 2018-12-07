@@ -7,6 +7,11 @@ public class Proie extends Animal{
 	private int x;
 	private int y;
 	
+	/**
+	 * Constructeur de Proie
+	 * @param x l'abscisse de positionnement
+	 * @param y l'ordonné de positionnement 
+	 */
 	public Proie(int x, int y){
 		double unPoids = Math.random() * 150 + 4.5;
 		this.poids = (double) Math.round(unPoids * 100) / 100;
