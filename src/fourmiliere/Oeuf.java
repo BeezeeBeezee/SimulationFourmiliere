@@ -3,8 +3,9 @@ package fourmiliere;
 public class Oeuf extends Etape{
 	
 	/**
-	 * Constructeur de Oeuf avec initialisation des variables
-	 **/
+	 * Constructeur de Oeuf associé à une fourmi
+	 * @param fourmi la fourmi associe
+	 */
 	public Oeuf(Fourmi fourmi) {
 		super();
 		double unPoids = Math.random() * 1 + 0.1;
@@ -25,38 +26,37 @@ public class Oeuf extends Etape{
 	}
 
 	/**
-	 * Méthode qui fait manger l'oeuf
+	 * Methode qui previens que l'oeuf ne mange pas.
 	 **/
 	@Override
 	public boolean mange(double aEteMange) {
 		return false;
 	}
 
-	/**
-	 * Méthode qui remet à zéro la faim de l'oeuf
-	 **/
 	@Override
 	public void vaManger() {
-		this.resteAManger = 0;
 	}
 
-	/**
-	 * Méthode qui affiche les variables
-	 **/
 	@Override
 	public String toString() {
 		return "[ Oeuf: Poids=" + this.poids + " , ResteAManger=" + this.resteAManger + "]";
 	}
 
+	/**
+	 * Methode qui renvoie l'etat suivant si l'oeuf est plus vieux que 3 jours
+	 * sinon return this
+	 */
 	@Override
 	Etape etatSuivant(int age) {
 		if(age > 3) {
 			return new Larve(this.fourmi);
 		}
-		this.vaManger();
 		return this;
 	}
 	
+	/**
+	 * L'oeuf ne peut pas mourir.
+	 */
 	@Override
 	boolean isGonnaDie() {
 		return false;
