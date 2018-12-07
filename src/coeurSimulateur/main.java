@@ -8,16 +8,15 @@ public class main {
 
 	public static void main(String[] args) {
 	
-		Temps temps = new Temps();
 		Fourmiliere f = new Fourmiliere();
 		f.setQuantiteNourriture(2000);
 
 		
 		while(true) {
 			
-			System.out.println("\n\n----------Jour "+temps.lireLeTemps()+"---------------");
+			System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
 			//System.out.println(f.toString());
-			System.out.println(temps.stepFourmiliere(f));
+			System.out.println(f.temps.stepFourmiliere(f));
 			
 			try {
 				TimeUnit.MILLISECONDS.sleep(200);

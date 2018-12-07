@@ -2,6 +2,8 @@ package fourmiliere;
 
 import java.util.ArrayList;
 
+import coeurSimulateur.Temps;
+
 public class Fourmiliere {
 	
 	
@@ -10,6 +12,7 @@ public class Fourmiliere {
 	private Reine roleReine;
 	private ArrayList<Fourmi> listeFourmis;
 	private Depot depot;
+	public Temps temps;
 
 	
 	
@@ -23,6 +26,7 @@ public class Fourmiliere {
 		roleReine= new Reine(adulteReine);
 		adulteReine.setRole(roleReine);
 		this.depot = new Depot();
+		this.temps = new Temps();
 	}
 	
 	public Role getRoleReine() {
@@ -36,7 +40,7 @@ public class Fourmiliere {
 	public Fourmi getlaReine() {
 		return laReine;
 	}
-	
+
 	public void step() {
 		laReine.step();
 		

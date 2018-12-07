@@ -8,13 +8,17 @@ public class Reine extends Role{
 	}
 	
 	public void travaille() {
-		pond();
+		this.pond();
 	}
 	
 	public void pond() {
-		Fourmi laFourmi= new Fourmi(this.adulte.fourmi.fourmiliere);
-		this.adulte.fourmi.fourmiliere.addListe(laFourmi);
-		laFourmi.setId(this.adulte.fourmi.fourmiliere.indexOfListe(laFourmi));
+		if( (this.adulte.fourmi.fourmiliere.temps.lireLeTemps()%365) <= 92 ) {
+			Fourmi laFourmi= new Fourmi(this.adulte.fourmi.fourmiliere);
+			this.adulte.fourmi.fourmiliere.addListe(laFourmi);
+			laFourmi.setId(this.adulte.fourmi.fourmiliere.indexOfListe(laFourmi));
+		} else {
+			System.out.println("NON POND");
+		}
 	} 
 
 	public String toString() {
