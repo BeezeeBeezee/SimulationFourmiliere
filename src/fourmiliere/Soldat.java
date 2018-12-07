@@ -8,7 +8,12 @@ public class Soldat extends Role{
 	}
 	
 	
-	public void travaille() {}
+	public void travaille() {
+		
+		this.adulte.fourmi.setIn(false);
+		
+		
+	}
 	
 	public String toString() {
 		return "[ Soldat ]";
