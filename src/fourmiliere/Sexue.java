@@ -12,7 +12,7 @@ public class Sexue extends Role{
 	}
 	
 	public void travaille() {
-		if( (this.adulte.fourmi.fourmiliere.temps.lireLeTemps()%365) == 300) {
+		if( (this.adulte.fourmi.fourmiliere.temps.lireLeTemps()%365) == 92) {
 			this.adulte.fourmi.fourmiliere.remove(this.adulte.fourmi);
 		}
 	}

@@ -24,7 +24,7 @@ public class Fourmi extends Animal {
 		this.setSexeRandom();
 		this.x = 350;
 		this.y = 250;
-		this.isIn = true;
+		this.isIn = true; 
 		this.fourmiliere = fourmiliere;
 	}
 	
