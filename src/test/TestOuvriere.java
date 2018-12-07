@@ -41,9 +41,8 @@ class TestOuvriere {
 		
 		assertTrue(fourmiliere.getDepot().getLesCadavres().size()==0);		
 		fourmiliere.step();		
-	//	assertTrue(fourmiliere.getDepot().getLesCadavres().size()==81);
-		System.out.println(fourmiliere.getDepot().getLesCadavres().size());
-		assertTrue(fourmiliere.getQuantiteNourrirture()==0);
+		assertTrue(fourmiliere.getDepot().getLesCadavres().size()>40);
+		//System.out.println(fourmiliere.getQuantiteNourrirture());
 	}
 	
 	
