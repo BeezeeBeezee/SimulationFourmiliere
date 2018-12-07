@@ -11,20 +11,13 @@ public abstract class Role {
 	
 	public void step() {
 		if(this.adulte.fourmi.fourmiliere.pourcentageDeMort() > 0.30) {
-			
-			
-		
 				this.nettoyage();
 				this.nettoyage();
-				
-				
 		}else {
 
 			this.travaille();
 			this.nettoyage();
 		}
-		
-		
 	}
 	
 	abstract void travaille();

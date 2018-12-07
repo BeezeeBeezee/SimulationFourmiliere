@@ -37,4 +37,8 @@ public class Depot {
 		}
 		return res + "]";
 	}
+	
+	public int getSizeDeCadavres() {
+		return this.lesCadavres.size();
+	}
 }
