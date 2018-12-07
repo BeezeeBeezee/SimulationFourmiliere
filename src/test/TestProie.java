@@ -10,7 +10,7 @@ class TestProie {
 
 	@Test
 	void test() {
-		Proie proie = new Proie();
+		Proie proie = new Proie(10, 10);
 		System.out.println(proie.toString());
 	}
 
