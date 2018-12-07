@@ -75,7 +75,7 @@ public class MainInterface {
 			f.temps.stepFourmiliere(f);
 		}
 		
-		int val;
+		int compteurFourmis;
 		jc.open();
 		
 		// DEBUT DU TRAITEMENT
@@ -83,19 +83,11 @@ public class MainInterface {
 			jc.clear(); // On écrase l'affichage précédent
 			
 			stat.calculDesStatistique(); // Calcul avant d'afficher les statistiques 
-			val = 0;	
+			compteurFourmis = 0;	
 			
 			
 			leTemps.incrementeMinute(f); // Le temps passe
 				
-				// Affichage du temps et des fourmis
-				//System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
-				//System.out.println(s);
-				
-				
-				/*for(int i=0;i < f.getSize(); i++) {					
-					System.out.println(f.getElement(i));
-				}*/ 
 				
 				// On ajoute dans la liste des éléments graphiques les points représentant les fourmis
 				for(int i=0; i < f.getSize(); i++) {
@@ -117,12 +109,12 @@ public class MainInterface {
 				// Affichage des fourmis (graphiquement)
 				List<Morph> drawables = jc.contents();
 				for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
-					if(f.getListe().get(val).isIn() == true) {
+					if(f.getListe().get(compteurFourmis).isIn() == true) {
 						iter.next().setPosition(new Point(350, 250));
 					} else {
-						iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
+						iter.next().setPosition(new Point(f.getListe().get(compteurFourmis).getX(), f.getListe().get(compteurFourmis).getY()));
 					}
-					val++;
+					compteurFourmis++;
 				}
 				
 				// Affichage de la fourmilière et de la reine
@@ -140,6 +132,7 @@ public class MainInterface {
 				jc.add(new DrawString(Color.BLACK, new Point(500, 220), dimReine, "Nombre de soldats : " + stat.getNbSoldat()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 240), dimReine, "Nombre de sexués : " + stat.getNbSexue()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 260), dimReine, "Nombre de morts : " + stat.getNbMort()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 280), dimReine, "Nombre de cadavres dans le dépôt : " + f.getDepot().getSizeDeCadavres()));
 				
 				jc.add(new DrawString(Color.RED, new Point(500, 300), dimReine, "Fourmis soldats en rouge"));
 				jc.add(new DrawString(Color.BLUE, new Point(500, 320), dimReine, "Fourmis ouvrières en bleu"));
@@ -148,19 +141,6 @@ public class MainInterface {
 				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
 				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
 				
-				
-			/*	if(leTemps.getMinutes()==0) {
-					
-					val=0;
-					for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
-						if(f.getListe().get(val).isIn() == true) {
-							iter.next().setPosition(new Point(350, 250));
-						}
-						
-						val++;
-					}
-				}
-				*/
 				
 				try {
 					TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
