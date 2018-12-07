@@ -11,6 +11,7 @@ public class Oeuf extends Etape{
 		this.poids = (double) Math.round(unPoids * 100) / 100;
 		this.resteAManger = 0;
 		this.fourmi = fourmi;
+		this.identificateur = 1;
 	}
 	
 	@Override

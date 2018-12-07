@@ -4,6 +4,7 @@ public class Sexue extends Role{
 	
 	Sexue(Adulte adulte){
 		super(adulte);
+		this.identificateur = 6;
 	}
 
 	public String toString() {

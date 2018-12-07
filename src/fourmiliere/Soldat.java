@@ -4,6 +4,7 @@ public class Soldat extends Role{
 
 	Soldat(Adulte adulte){
 		super(adulte);
+		this.identificateur = 5;
 	}
 	
 	

@@ -3,10 +3,10 @@ package fourmiliere;
 public abstract class Role {
 
 	Adulte adulte;
+	public int identificateur;
 	
 	Role(Adulte a){
-		
-		adulte=a;		
+		adulte=a;
 	}
 	
 	public void step() {

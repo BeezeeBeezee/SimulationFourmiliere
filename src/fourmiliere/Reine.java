@@ -5,6 +5,7 @@ public class Reine extends Role{
 	
 	public Reine(Adulte a){
 		super(a);	
+		this.identificateur = 7;
 	}
 	
 	public void travaille() {

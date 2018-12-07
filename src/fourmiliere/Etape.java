@@ -5,6 +5,7 @@ public abstract class Etape {
 	protected Fourmi fourmi;
 	protected double poids;
 	protected double resteAManger;
+	public int identificateur;
 	
 	abstract double getPoids();
 	abstract boolean mange(double aEteMange);

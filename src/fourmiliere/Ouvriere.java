@@ -5,6 +5,7 @@ public class Ouvriere extends Role{
 	
 	public Ouvriere(Adulte adulte) {
 		super(adulte);
+		this.identificateur=4;
 	}
 	
 	

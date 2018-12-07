@@ -28,6 +28,7 @@ public class Adulte extends Etape{
 		else if (roleFinal > roleSexue + roleSoldat && roleFinal <= 100) { // Ouvriere
 			this.role = new Ouvriere(this);
 		}
+		this.identificateur = this.role.identificateur;
 	}
 	
 	public Role getRole() {

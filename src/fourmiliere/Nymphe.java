@@ -10,6 +10,7 @@ public class Nymphe extends Etape{
 		this.poids = 0;
 		this.resteAManger = 0;
 		this.fourmi = fourmi;
+		this.identificateur = 3;
 	}
 	
 	@Override
