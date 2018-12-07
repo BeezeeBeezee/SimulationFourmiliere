@@ -17,8 +17,6 @@ public class Reine extends Role{
 			Fourmi laFourmi= new Fourmi(this.adulte.fourmi.fourmiliere);
 			this.adulte.fourmi.fourmiliere.addListe(laFourmi);
 			laFourmi.setId(this.adulte.fourmi.fourmiliere.indexOfListe(laFourmi));
-		} else {
-			System.out.println("NON POND");
 		}
 	} 
 
