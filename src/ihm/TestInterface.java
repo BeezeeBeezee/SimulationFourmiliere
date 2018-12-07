@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
 import coeurSimulateur.Temps;
+import coeurSimulateur.TempsMinutes;
 import fourmiliere.Adulte;
 import fourmiliere.Etape;
 import fourmiliere.Fourmi;
@@ -61,6 +62,7 @@ public class TestInterface {
 		int nbJours=0;	
 		Temps test = new Temps();	
 		Fourmiliere f= new Fourmiliere();	
+		TempsMinutes leTemps= new TempsMinutes();
 		f.setQuantiteNourriture(Integer.parseInt(nombreNourriture));
 		
 		int val;
@@ -71,57 +73,60 @@ public class TestInterface {
 			
 			val = 0;
 			double laBouffe=f.getQuantiteNourrirture();		
-			test.stepFourmiliere(f);
+			leTemps.incrementeMinute(f);
+			String s=leTemps.incrementeMinute(f);
+			
+			if(s!=null) {
 				
-			System.out.println("----------jour"+nbJours+"---------------");
-			System.out.println("quantite bouffe:"+laBouffe);
-			
-			for(int i=0;i < f.getSize(); i++) {					
-				System.out.println(f.getElement(i));
-			} 
-			
-			for(int i=0; i < f.getSize(); i++) {
-				if((f.getListe().get(i).getEtape().identificateur == 4) || (f.getListe().get(i).getEtape().identificateur == 5) || (f.getListe().get(i).getEtape().identificateur == 6)) {
-					leTerrain.seDeplacer(f.getListe().get(i));
-					
-					if(f.getListe().get(i).getEtape().identificateur == 4) {
-						jc.add(new Oval(Color.BLUE, new Point(350, 250), dimFourmi));
+				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
+				System.out.println(s);
+				
+				for(int i=0;i < f.getSize(); i++) {					
+					System.out.println(f.getElement(i));
+				} 
+				
+				for(int i=0; i < f.getSize(); i++) {
+					if((f.getListe().get(i).getEtape().identificateur == 4) || (f.getListe().get(i).getEtape().identificateur == 5) || (f.getListe().get(i).getEtape().identificateur == 6)) {
+						leTerrain.seDeplacer(f.getListe().get(i));
+						
+						if(f.getListe().get(i).getEtape().identificateur == 4) {
+							jc.add(new Oval(Color.BLUE, new Point(350, 250), dimFourmi));
+						}
+						if(f.getListe().get(i).getEtape().identificateur == 5) {
+							jc.add(new Oval(Color.RED, new Point(350, 250), dimFourmi));
+						}
+						if(f.getListe().get(i).getEtape().identificateur == 6) {
+							jc.add(new Oval(Color.PINK, new Point(350, 250), dimFourmi));
+						}
 					}
-					if(f.getListe().get(i).getEtape().identificateur == 5) {
-						jc.add(new Oval(Color.RED, new Point(350, 250), dimFourmi));
+				}		
+				
+				List<Morph> drawables = jc.contents();
+				for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
+					if(f.getListe().get(val).isIn() == true) {
+						iter.next().setPosition(new Point(350, 250));
+					} else {
+						iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
 					}
-					if(f.getListe().get(i).getEtape().identificateur == 6) {
-						jc.add(new Oval(Color.PINK, new Point(350, 250), dimFourmi));
-					}
+					val++;
 				}
-			}		
-			
-			List<Morph> drawables = jc.contents();
-			for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
-				//if(f.getListe().get(val).isIn() == true) {
-					//iter.next().setPosition(new Point(350, 250));
-				//} else {
-					iter.next().setPosition(new Point(f.getListe().get(val).getX(), f.getListe().get(val).getY()));
-				//}
-				val++;
-			}
-			
-			jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
-			jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
-			
-			jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
-			jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
-			
-			try {
-				TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-					
-			nbJours++;
-		}
 				
+				jc.add(new DOval(Color.darkGray, new Point(300, 200), dimFourmiliere));
+				jc.add(new Oval(Color.GRAY, new Point(350, 250), dimReine));
+				
+				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
+				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
+				
+				try {
+					TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+						
+				nbJours++;
+			}
+		}		
 	}	
 
 }
