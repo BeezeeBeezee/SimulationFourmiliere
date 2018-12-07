@@ -7,7 +7,7 @@ public class TempsMinutes {
 	int minutes;
 	
 	
-	TempsMinutes(){
+	public TempsMinutes(){
 		
 		int minutes=0;
 		
@@ -19,14 +19,16 @@ public class TempsMinutes {
 	}
 	
 	
-	void incrementeMinute(Fourmiliere f){
+	public String incrementeMinute(Fourmiliere f){
 		
+		String s=null;
 		minutes++;
-		if(minutes>=1440)
-			f.temps.stepFourmiliere(f);
-		
-		minutes=0;
-		
+		if(minutes>=1440) {
+			s=f.temps.stepFourmiliere(f);
+			minutes=0;
+		}
+			
+		return s;
 		
 	}
 	
