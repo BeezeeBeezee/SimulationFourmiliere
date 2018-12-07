@@ -13,20 +13,25 @@ public class main {
 		f.setQuantiteNourriture(2000);
 
 		
+		for(int i=1; i<=29;i++) {
+			f.temps.stepFourmiliere(f);
+		}
+		
+		
+		
 		while(true) {
 			
-			leTemps.incrementeMinute(f);
-			
+		
 			//System.out.println(f.toString());
 			String s=leTemps.incrementeMinute(f);
 		
 				if(s!=null) {
 				
-				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
+				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------"+ leTemps.getMinutes());
 				System.out.println(s);
 				
 				try {
-				TimeUnit.MILLISECONDS.sleep(200);
+				TimeUnit.MILLISECONDS.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
