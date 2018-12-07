@@ -10,20 +10,24 @@ public class Fourmiliere {
 	
 	private double quantiteNourriture;
 	private Fourmi laReine;
+	private Reine roleReine;
+	private Adulte adulteReine;
 	private ArrayList<Fourmi> listeFourmis;
 	private Depot depot;
 	public Temps temps;
 	public TempsMinutes minutes;
+	
 
 	
 	
 	public Fourmiliere(){
 		quantiteNourriture=0;
 		listeFourmis = new ArrayList<Fourmi>();
-
 		laReine= new Fourmi(this);
-		Adulte adulteReine=new Adulte(laReine);
+		adulteReine= new Adulte(laReine);
+		roleReine= new Reine(adulteReine);
 		laReine.setEtape(adulteReine);
+		adulteReine.setRole(roleReine);
 		this.depot = new Depot();
 		this.temps = new Temps();
 		this.minutes = new TempsMinutes();
@@ -40,6 +44,8 @@ public class Fourmiliere {
 	}
 
 	public void step() {
+		//System.out.print("je ponds");
+		
 		laReine.step();
 		
 		for(int i=0;i<=listeFourmis.size()-1;i++) {		
