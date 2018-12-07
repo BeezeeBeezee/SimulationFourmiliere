@@ -13,7 +13,7 @@ public class TempsMinutes {
 		
 	}
 	
-	int getMinutes() {
+	public int getMinutes() {
 		
 		return minutes;
 	}

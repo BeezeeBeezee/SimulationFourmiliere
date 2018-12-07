@@ -24,7 +24,6 @@ public abstract class Role {
 			this.nettoyage();
 		}
 		
-		this.adulte.fourmi.setIn(true);
 		
 	}
 	

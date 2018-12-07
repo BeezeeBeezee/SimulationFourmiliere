@@ -87,7 +87,6 @@ public class MainInterface {
 			
 			
 			leTemps.incrementeMinute(f); // Le temps passe
-			String s=leTemps.incrementeMinute(f);
 				
 				// Affichage du temps et des fourmis
 				//System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
@@ -149,6 +148,19 @@ public class MainInterface {
 				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
 				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
 				
+				
+			/*	if(leTemps.getMinutes()==0) {
+					
+					val=0;
+					for (Iterator<Morph> iter = drawables.iterator(); iter.hasNext();) {	
+						if(f.getListe().get(val).isIn() == true) {
+							iter.next().setPosition(new Point(350, 250));
+						}
+						
+						val++;
+					}
+				}
+				*/
 				
 				try {
 					TimeUnit.MILLISECONDS.sleep(Integer.parseInt(nombreTemps));
