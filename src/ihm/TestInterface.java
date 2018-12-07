@@ -76,7 +76,6 @@ public class TestInterface {
 			leTemps.incrementeMinute(f);
 			String s=leTemps.incrementeMinute(f);
 			
-			if(s!=null) {
 				
 				System.out.println("\n\n----------Jour "+f.temps.lireLeTemps()+"---------------");
 				System.out.println(s);
@@ -124,8 +123,7 @@ public class TestInterface {
 					e.printStackTrace();
 				}
 						
-				nbJours++;
-			}
+
 		}		
 	}	
 
