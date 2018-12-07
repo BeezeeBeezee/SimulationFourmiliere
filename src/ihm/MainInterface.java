@@ -101,7 +101,7 @@ public class MainInterface {
 							jc.add(new Oval(Color.RED, new Point(350, 250), dimFourmi));
 						}
 						if(f.getListe().get(i).getEtape().identificateur == 6) {
-							jc.add(new Oval(Color.PINK, new Point(350, 250), dimFourmi));
+							jc.add(new Oval(Color.orange, new Point(350, 250), dimFourmi));
 						}
 					}
 				}		
@@ -128,7 +128,7 @@ public class MainInterface {
 				jc.add(new DrawString(Color.BLACK, new Point(500, 140), dimReine, "Nombre d'oeufs : " + stat.getNbOeufs()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 160), dimReine, "Nombre de larves : " + stat.getNbLarves()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 180), dimReine, "Nombre de nymphes : " + stat.getNbNymphes()));
-				jc.add(new DrawString(Color.BLACK, new Point(500, 200), dimReine, "Nombre d'ouvriers : " + stat.getNbOuvriere()));
+				jc.add(new DrawString(Color.BLACK, new Point(500, 200), dimReine, "Nombre d'ouvrieres : " + stat.getNbOuvriere()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 220), dimReine, "Nombre de soldats : " + stat.getNbSoldat()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 240), dimReine, "Nombre de sexués : " + stat.getNbSexue()));
 				jc.add(new DrawString(Color.BLACK, new Point(500, 260), dimReine, "Nombre de morts : " + stat.getNbMort()));
@@ -136,7 +136,7 @@ public class MainInterface {
 				
 				jc.add(new DrawString(Color.RED, new Point(500, 300), dimReine, "Fourmis soldats en rouge"));
 				jc.add(new DrawString(Color.BLUE, new Point(500, 320), dimReine, "Fourmis ouvrières en bleu"));
-				jc.add(new DrawString(Color.PINK, new Point(500, 340), dimReine, "Fourmis sexuées en rose"));
+				jc.add(new DrawString(Color.orange, new Point(500, 340), dimReine, "Fourmis sexuées en orange"));
 				
 				jc.add(new Oval(Color.GREEN, new Point(proie1.getX(), proie1.getY()), dimPheromone));
 				jc.add(new Oval(Color.GREEN, new Point(proie2.getX(), proie2.getY()), dimPheromone));
