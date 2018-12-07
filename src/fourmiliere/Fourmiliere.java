@@ -43,9 +43,11 @@ public class Fourmiliere {
 		return laReine;
 	}
 
+	/**
+	 * Fait appel à la methode step de chaque fourmi.
+	 * Condition: la fourmi doit être vivante
+	 **/
 	public void step() {
-		//System.out.print("je ponds");
-		
 		laReine.step();
 		
 		for(int i=0;i<=listeFourmis.size()-1;i++) {		
@@ -66,7 +68,15 @@ public class Fourmiliere {
 		this.quantiteNourriture=nouvelleQuantite;	
 	}
 	
-	public boolean nourrir(Fourmi f) {
+	/**
+	 * La méthode permet de nourrir un fourmi :
+	 * - si elle est encore vivante
+	 * - si elle doit encore mangé
+	 * - si il reste de la nourriture dans la fourmiliere
+	 * @param f la fourmi à nourrir
+	 * @return true si elle a mange, false sinon
+	 */
+	private boolean nourrir(Fourmi f) {
 
 		if(!(f.getVivant())) 
 			return false;
@@ -85,18 +95,29 @@ public class Fourmiliere {
 		return false;
 	}
 	
-	
+	/**
+	 * Appel de la fonction nourrir pour chaque fourmis présent dans la liste
+	 */
 	public void nourrir(){
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
 			nourrir(this.listeFourmis.get(i));
 		}
 	} 
 	
-		
+	/**
+	 * Ajout d'une fourmi dans la liste.
+	 * @param f la fourmi a ajoutée
+	 * @return true si ajouté, false sinon
+	 */
 	public boolean addListe(Fourmi f) {
 		return listeFourmis.add(f);
 	}
 	
+	/**
+	 * Suppresion d'une fourmi dans la liste.
+	 * @param f la fourmi à supprimer
+	 * @return true si supprimer, false sinon
+	 */
 	public boolean remove(Fourmi f) {
 		return listeFourmis.remove(f);
 	}
@@ -123,7 +144,10 @@ public class Fourmiliere {
 	}
 	
 	
-	
+	/**
+	 * Calcul du pourcentage totale de fourmi mort présent dans la fourmiliere
+	 * @return -1 si le calcul n'est pas possible, le pourcentage calculée sinon
+	 */
 	public double pourcentageDeMort() {
 		
 		int nbMort=0;
@@ -139,29 +163,20 @@ public class Fourmiliere {
 		else return -1;
 	}
 	
-/*	public double pourcentageDeMort() {
-		int nbMort = 0;
-		
-		if(listeFourmis.isEmpty()) return 0;
-		for(Fourmi fourmi :listeFourmis) {
-			if(fourmi.isIn() && fourmi.getVivant()) {
-				nbMort++;
-			}
-		}
-		if( listeFourmis.size() != 0 ) {
-			return nbMort/listeFourmis.size();
-		}
-		return 0;
-	}
-	*/
-	
+	/**
+	 * Parcourt de la liste fourmi, 
+	 * puis appel de la fonction isGonnaDie() pour chaque fourmi.
+	 */
 	public void isGonnaDie() {
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
 			listeFourmis.get(i).isGonnaDie();
 		}
 	}
 	
-	
+	/**
+	 * Appel de la fonction incrementAge() pour chaque fourmi
+	 * présent dans la liste.
+	 */
 	public void incrementAge() {
 		for(int i=0;i<=this.listeFourmis.size()-1;i++) {
 			listeFourmis.get(i).incrementAge();
