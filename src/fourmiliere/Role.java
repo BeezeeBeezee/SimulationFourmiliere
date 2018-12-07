@@ -23,6 +23,9 @@ public abstract class Role {
 			this.travaille();
 			this.nettoyage();
 		}
+		
+		this.adulte.fourmi.setIn(true);
+		
 	}
 	
 	abstract void travaille();
